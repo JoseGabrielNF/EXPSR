@@ -52,6 +52,7 @@ As seguintes pessoas contribuiram para este projeto:
 
 * [José Gabriel](https://github.com/JoseGabrielNF)
 * [Tobias Argenton Gehlen](https://github.com/TobiasGehlen)
+* [Vinícius Oliveira](https://github.com/oliveirabr)
 * *.... (liste todos os membros da equipe)*
 
 ## Licença de uso
