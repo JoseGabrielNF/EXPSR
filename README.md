@@ -7,8 +7,6 @@
 EXPSR é uma plataforma de armazenamento e compartilhamento de imagens com objetivo de expôr sua vida e trabalho por meio da fotografia.
 
 ![](EXPSR_cloud_logo.png)
- 
-Coloque aqui linhas adicionais com informações sobre o que a aplicação faz. Sua introdução deve ser de no máximo 3 parágrafos, seja simples e objetivo para não sobrecarregar de detalhes desnecessários este espaço. Se necessário, crie novas seções abaixo.
 
 ## Pré-requisitos
 
@@ -52,7 +50,7 @@ Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
 
 As seguintes pessoas contribuiram para este projeto:
 
-* [Meu nome](https://github.com/meu_nome)
+* [José Gabriel](https://github.com/JoseGabrielNF)
 * *.... (liste todos os membros da equipe)*
 
 ## Licença de uso
