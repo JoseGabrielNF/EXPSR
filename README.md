@@ -56,7 +56,7 @@ As seguintes pessoas contribuiram para este projeto:
 * [Tobias Argenton Gehlen](https://github.com/TobiasGehlen)
 * [Vinícius Oliveira](https://github.com/oliveirabr)
 * [Luiz Felipe de Oliveira](https://github.com/LuizFelps)
-* *.... (liste todos os membros da equipe)*
+* Rafael Cardoso
 
 ## Licença de uso
 
