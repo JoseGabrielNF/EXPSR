@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 	<title>Página inicial - EXPSR</title>
 </head>
 <body>
@@ -27,6 +28,9 @@
 	</section>
 	<section>
 		<a name="sobre"></a>
+		<div class="container">
+			<h2 class="title">Sobre nós</h2>
+		</div>
 	</section>
 </body>
 </html>
