@@ -154,7 +154,7 @@
 }
 
 @media (max-width: 620px) {
-	.menu-perfil {
+	.dashboard .side-menu {
 		display: none;
 	}
 
