@@ -54,7 +54,7 @@
 							<i class="fas fa-lock align-right"></i>
 						</div>
 						<div class="album-image">
-							<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Título do álbum" title="Título do álbum">
+							<img src="images/background-90.jpg" alt="Título do álbum" title="Título do álbum">
 						</div>
 						<div class="album-footer">16 fotos</div>
 					</div>
