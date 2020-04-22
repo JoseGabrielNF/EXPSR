@@ -54,7 +54,7 @@
 							<i class="fas fa-lock align-right"></i>
 						</div>
 						<div class="album-image">
-							<img src="images/background-90.jpg" alt="Título do álbum" title="Título do álbum">
+							<img src="images/imagem-vertical.jpg" alt="Título do álbum" title="Título do álbum">
 						</div>
 						<div class="album-footer">16 fotos</div>
 					</div>
