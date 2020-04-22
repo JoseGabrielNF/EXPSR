@@ -17,49 +17,35 @@
 				<li><a href="index.php">Início</a></li>
 				<li><a href="#sobre">Sobre nós</a></li>
 				<li><a href="#planos">Planos</a></li>
-				<li class="push alt"><a href="login.php">Já possui uma conta?</a></li>
+				<li class="push alt"><a href="cadastro.php">Deseja criar uma conta?</a></li>
 			</ul>
 		</div>
     </nav>
-    <section class="backgroundCadastro">
-        <div class="cadastro">
+    <section class="backgroundLogin">
+        <div class="login">
 			<!--Metodo post é para enviar ao servidor-->
 			<!--required: deve preencher o campo-->
     	 <form method="post"> 
-    	        <h1>Criar Conta</h1> 
+    	        <h1>Faça seu Login</h1> 
     	        <p> 
     	            <h1 class="nomeInput">Usuário:</h1>
     	            <input required="required" type="text" name="usuario" placeholder="Insira seu nome de usuário" />
-    	        </p>
-    	        <p> 
-    	            <h1 class="nomeInput">E-mail:</h1>
-    	            <input required="required" type="email" name="email" placeholder="Insira seu e-mail"/> 
     	        </p>
     	        <p>
     	            <h1 class="nomeInput">Senha:</h1>
     	            <input required="required" type="password" name="senha" placeholder="Insira sua senha"/>
     	        </p>
     	        <p> 
-    	            <h1 class="nomeInput">Repetir Senha:</h1>
-    	            <input required="required" type="password" name="senha2" placeholder="Repita a senha inserida acima"/>
-    	        </p>
-    	        <p> 
-    	            <input type="submit" value="Criar Conta"/> 
+    	            <input class="login" type="submit" value="Entrar"/> 
 				</p>
-				<?php
+                <?php
 					echo "Usuário: " . $_POST["usuario"] . "<br>";
-					echo "E-mail: " . $_POST["email"] . "<br>";
 					echo "Senha: " . $_POST["senha"] . "<br>";
-					echo "Repetir Senha: " . $_POST["senha2"] . "<br>";
 				?>
-    	        <p class="termo">  
-    	        Ao criar uma conta você concorda com os termos e condições disponiveis
-    	        <a href="terms.html">aqui</a>.
-    	        </p>
     	    </form>   
         <div>
 	</section>
     
-</body>
+</body> 
 
 </html>
