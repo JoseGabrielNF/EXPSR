@@ -12,10 +12,10 @@
 	<div class="dashboard">
 		<nav class="side-menu">
 			<div class="user-image">
-				<img src="images/profile-picture.jpg" alt="Fulano da Silva">
+				<img src="images/profile-picture.jpg" alt="@fulanodasilva" title="@fulanodasilva" draggable="false">
 			</div>
 			<div class="info">
-				<h1 class="name">Fulano da Silva</h1>
+				<h1 class="name">@fulanodasilva</h1>
 				<span class="description">5 álbuns - 47 fotos</span>
 			</div>
 			<ul>
@@ -32,86 +32,34 @@
 					<button class="button align-right">Criar álbum</button>
 				</div>
 				<div class="albums">
+					<?php
+						for ($i = 0; $i < 7; $i++) {
+					?>
+		
 					<div class="album">
 						<div class="album-header">
 							<h3 class="album-title">Título do álbum</h3>
 							<i class="fas fa-user-friends align-right"></i>
 						</div>
-						<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-						<p>42 fotos</p>
+						<div class="album-image">
+							<img src="images/background.jpg" alt="Título do álbum" title="Título do álbum">
+						</div>
+						<div class="album-footer">42 fotos</div>
 					</div>
+
 					<div class="album">
 						<div class="album-header">
 							<h3 class="album-title">Título do álbum</h3>
 							<i class="fas fa-lock align-right"></i>
 						</div>
-						<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-						<p>16 fotos</p>
-					</div>
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-user-friends align-right"></i>
+						<div class="album-image">
+							<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Título do álbum" title="Título do álbum">
 						</div>
-						<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-						<p>42 fotos</p>
+						<div class="album-footer">16 fotos</div>
 					</div>
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-lock align-right"></i>
-						</div>
-						<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-						<p>16 fotos</p>
-					</div>
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-user-friends align-right"></i>
-						</div>
-						<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-						<p>42 fotos</p>
-					</div>
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-lock align-right"></i>
-						</div>
-						<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-						<p>16 fotos</p>
-					</div>
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-user-friends align-right"></i>
-						</div>
-						<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-						<p>42 fotos</p>
-					</div>
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-lock align-right"></i>
-						</div>
-						<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-						<p>16 fotos</p>
-					</div>
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-user-friends align-right"></i>
-						</div>
-						<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-						<p>42 fotos</p>
-					</div>
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-lock align-right"></i>
-						</div>
-						<img src="https://images.unsplash.com/photo-1573935146153-f6322e84d1e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-						<p>16 fotos</p>
-					</div>
+					<?php
+						}
+					?>
 				</div>
 			</div>
 		</div>

@@ -16,7 +16,7 @@
 				<li><a href="#sobre">Sobre nós</a></li>
 				<li><a href="#">Planos</a></li>
 				<li class="push alt"><a href="#">Entrar</a></li>
-				<li class="alt"><a href="#">Criar conta</a></li>
+				<li class="alt"><a href="cadastro.php">Criar conta</a></li>
 			</ul>
 		</div>
 	</nav>
