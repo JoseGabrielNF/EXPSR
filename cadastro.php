@@ -4,16 +4,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
-	<title>Página inicial - EXPSR</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+	<title>Cadastro - EXPSR</title>
 </head>
 <body >
-<nav id="nav" class="menu">
+	<nav id="nav" class="menu">
 		<div class="container">
-			<div class="logo">EXPSR</div>
+			<div class="logo">
+				<a href="index.php">EXPSR</a>
+			</div>
 			<ul>
-				<li><a href="#">Início</a></li>
+				<li><a href="index.php">Início</a></li>
 				<li><a href="#sobre">Sobre nós</a></li>
-				<li><a href="#">Planos</a></li>
+				<li><a href="#planos">Planos</a></li>
 				<li class="push alt"><a href="#">Já possui uma conta?</a></li>
 			</ul>
 		</div>
@@ -43,14 +46,10 @@
     	        </p>
     	        <p class="termo">  
     	        Ao criar uma conta você concorda com os termos e condições disponiveis
-    	        <a href="#">aqui</a>
-    	        .
+    	        <a href="terms.html">aqui</a>.
     	        </p>
     	    </form>   
         <div>
-	</section>
-	<section>
-		<a name="sobre"></a>
 	</section>
     
 </body>

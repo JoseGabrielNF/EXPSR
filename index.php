@@ -10,12 +10,14 @@
 <body>
 	<nav class="menu">
 		<div class="container">
-			<div class="logo">EXPSR</div>
+			<div class="logo">
+				<a href="index.php">EXPSR</a>
+			</div>
 			<ul>
-				<li><a href="#">Início</a></li>
+				<li><a href="index.php">Início</a></li>
 				<li><a href="#sobre">Sobre nós</a></li>
-				<li><a href="#">Planos</a></li>
-				<li class="push alt"><a href="#">Entrar</a></li>
+				<li><a href="#planos">Planos</a></li>
+				<li class="push alt"><a href="perfil.php">Entrar</a></li>
 				<li class="alt"><a href="cadastro.php">Criar conta</a></li>
 			</ul>
 		</div>
@@ -26,10 +28,14 @@
 			<p>Armazene e compartilhe as suas melhores memórias!</p>
 		</div>
 	</section>
-	<section>
-		<a name="sobre"></a>
+	<section>		
 		<div class="container">
+			<a name="sobre"></a>
 			<h2 class="title">Sobre nós</h2>
+		</div>
+		<div class="container">
+			<a name="planos"></a>
+			<h2 class="title">Planos</h2>
 		</div>
 	</section>
 </body>

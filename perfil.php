@@ -20,9 +20,10 @@
 			</div>
 			<ul>
 				<li><a href="#">Meu perfil</a></li>
+				<li><a href="upload.php">Upload</a></li>
 				<li class="active"><a href="#">Álbuns</a></li>
 				<li><a href="#">Amigos</a></li>
-				<li><a href="#">Botão</a></li>
+				<li><a href="index.php">Sair</a></li>
 			</ul>
 		</nav>
 		<div class="body">
