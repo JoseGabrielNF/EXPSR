@@ -144,3 +144,66 @@ section .title {
 	text-transform: uppercase;
 	padding: 20px 0;
 }
+
+.backgroundCadastro {
+	height: calc(100% - 50px);
+	background-image: url('https://mocah.org/thumbs/105262-kata-noi-beach-karon-thailand-best-beaches-of-2016-travellers-choice-awards-2016.jpg');
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+ /*estilo do quadrado de cadastro*/
+ .cadastro {
+	width: 300px;
+	height: 380px;
+	margin-left: 20px;
+	margin-top: 0px;
+}
+
+form input {
+	outline: none;
+	width: 100%;
+	margin-top: 4px;
+	padding: 10px;    
+	border: none;
+	background-color: #C4C4C4;
+}
+      
+  /*estilo do botão submit */
+form input[type="submit"]{
+	width: 100%;
+	cursor: pointer;  
+	background: #D33232;
+	color: #fff;
+	font-size: 20px;  
+	border: 1px solid #fff;  
+	margin-top: 20px; 
+	border-radius: 15px;
+}
+   
+  /*estilo do botão submit no hover */
+form input[type="submit"]:hover{
+	background: rgba(255, 0, 0, 0.986);
+}
+ 
+form input:not([type="submit"]){
+	margin-left: 5px;
+	width: 96%;
+	border-radius: 15px;
+}
+
+/*nome dos inputs*/
+form h1.nomeInput{
+	  margin-left: 5px;
+	  color: #3a3232;
+	  font-size: 15px;
+	  margin-top: 8;
+}
+
+form p.termo {
+	font-size: 15px;
+	color: #666666;
+}
