@@ -113,7 +113,7 @@ a:hover {
 	margin-top: 50px;
 }
 
-/* Ajustar para deslocar a âncora (devido ao menu de navegação fixo) */
+/* Correção da posição da âncora devido ao menu de navegação fixo */
 .anchor {
     visibility: hidden;
 	position: relative;
