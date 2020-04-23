@@ -22,21 +22,25 @@
 			</ul>
 		</div>
 	</nav>
-	<section class="background">
-		<div class="container">
-			<h1>Seja bem-vindo ao <span>EXPSR</span></h1>
-			<p>Armazene e compartilhe as suas melhores memórias!</p>
-		</div>
-	</section>
-	<section>		
-		<div class="container">
-			<a name="sobre"></a>
-			<h2 class="title">Sobre nós</h2>
-		</div>
-		<div class="container">
-			<a name="planos"></a>
-			<h2 class="title">Planos</h2>
-		</div>
-	</section>
+	<div class="body">
+		<section class="background">
+			<div class="container">
+				<h1>Seja bem-vindo ao <span>EXPSR</span></h1>
+				<p>Armazene e compartilhe as suas melhores memórias!</p>
+			</div>
+		</section>
+		<section>		
+			<a class="anchor" name="sobre"></a>
+			<div class="container">
+				<h2 class="title">Sobre nós</h2>
+			</div>
+		</section>
+		<section>
+			<a class="anchor" name="planos"></a>
+			<div class="container">
+				<h2 class="title">Planos</h2>
+			</div>
+		</section>
+	</div>
 </body>
 </html>

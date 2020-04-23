@@ -20,32 +20,33 @@
 				<li class="push alt"><a href="cadastro.php">Deseja criar uma conta?</a></li>
 			</ul>
 		</div>
-    </nav>
-    <section class="backgroundLogin">
-        <div class="login">
-			<!--Metodo post é para enviar ao servidor-->
-			<!--required: deve preencher o campo-->
-    	 <form method="post"> 
-    	        <h1>Faça seu Login</h1> 
-    	        <p> 
-    	            <h1 class="nomeInput">Usuário:</h1>
-    	            <input required="required" type="text" name="usuario" placeholder="Insira seu nome de usuário" />
-    	        </p>
-    	        <p>
-    	            <h1 class="nomeInput">Senha:</h1>
-    	            <input required="required" type="password" name="senha" placeholder="Insira sua senha"/>
-    	        </p>
-    	        <p> 
-    	            <input class="login" type="submit" value="Entrar"/> 
-				</p>
-                <?php
-					echo "Usuário: " . $_POST["usuario"] . "<br>";
-					echo "Senha: " . $_POST["senha"] . "<br>";
-				?>
-    	    </form>   
-        <div>
-	</section>
-    
+	</nav>
+	<div class="body">
+		<section class="backgroundLogin">
+			<div class="login">
+				<!--Metodo post é para enviar ao servidor-->
+				<!--required: deve preencher o campo-->
+			 <form method="post"> 
+					<h1>Faça seu Login</h1> 
+					<p> 
+						<h1 class="nomeInput">Usuário:</h1>
+						<input required="required" type="text" name="usuario" placeholder="Insira seu nome de usuário" />
+					</p>
+					<p>
+						<h1 class="nomeInput">Senha:</h1>
+						<input required="required" type="password" name="senha" placeholder="Insira sua senha"/>
+					</p>
+					<p> 
+						<input class="login" type="submit" value="Entrar"/> 
+					</p>
+					<?php
+						echo "Usuário: " . $_POST["usuario"] . "<br>";
+						echo "Senha: " . $_POST["senha"] . "<br>";
+					?>
+				</form>   
+			<div>
+		</section>
+	</div>
 </body> 
 
 </html>
