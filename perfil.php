@@ -36,27 +36,25 @@
 					<?php
 						for ($i = 0; $i < 7; $i++) {
 					?>
-		
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-user-friends align-right"></i>
-						</div>
-						<div class="album-image">
-							<img src="images/background.jpg" alt="Título do álbum" title="Título do álbum">
-						</div>
-						<div class="album-footer">42 fotos</div>
-					</div>
 
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-lock align-right"></i>
-						</div>
-						<div class="album-image">
-							<img src="images/imagem-vertical.jpg" alt="Título do álbum" title="Título do álbum">
-						</div>
-						<div class="album-footer">16 fotos</div>
+					<div class="album" style="background-image: url('images/background.jpg');">
+						<a href="#">
+							<div class="album-header">
+								<h3 class="album-title">Título do álbum</h3>
+								<i class="fas fa-user-friends align-right"></i>
+							</div>
+							<div class="album-footer">42 fotos</div>
+						</a>
+					</div>
+					
+					<div class="album" style="background-image: url('images/imagem-vertical.jpg');">
+						<a href="#">
+							<div class="album-header">
+								<h3 class="album-title">Título do álbum</h3>
+								<i class="fas fa-lock align-right"></i>
+							</div>
+							<div class="album-footer">16 fotos</div>
+						</a>
 					</div>
 					<?php
 						}
