@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/dashboard.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-	<title>Meu perfil - EXPSR</title>
+	<title>Meus álbuns - EXPSR</title>
 </head>
 <body>
 	<div class="dashboard">
@@ -29,7 +29,7 @@
 		<div class="body">
 			<div class="container">
 				<div class="page-header">
-					<h2 class="page-title">Álbuns</h2>
+					<h2 class="page-title">Meus álbuns</h2>
 					<button class="button align-right">Criar álbum</button>
 				</div>
 				<div class="albums">
@@ -59,6 +59,17 @@
 					<?php
 						}
 					?>
+				</div>
+				<div class="page-footer">
+					<ul class="pagination">
+						<li><a href="#">Anterior</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">Próxima</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
