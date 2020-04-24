@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/dashboard.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-	<title>Meu perfil - EXPSR</title>
+	<title>Meus álbuns - EXPSR</title>
 </head>
 <body>
 	<div class="dashboard">
@@ -29,38 +29,47 @@
 		<div class="body">
 			<div class="container">
 				<div class="page-header">
-					<h2 class="page-title">Álbuns</h2>
+					<h2 class="page-title">Meus álbuns</h2>
 					<button class="button align-right">Criar álbum</button>
 				</div>
 				<div class="albums">
 					<?php
 						for ($i = 0; $i < 7; $i++) {
 					?>
-		
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-user-friends align-right"></i>
-						</div>
-						<div class="album-image">
-							<img src="images/background.jpg" alt="Título do álbum" title="Título do álbum">
-						</div>
-						<div class="album-footer">42 fotos</div>
-					</div>
 
-					<div class="album">
-						<div class="album-header">
-							<h3 class="album-title">Título do álbum</h3>
-							<i class="fas fa-lock align-right"></i>
-						</div>
-						<div class="album-image">
-							<img src="images/imagem-vertical.jpg" alt="Título do álbum" title="Título do álbum">
-						</div>
-						<div class="album-footer">16 fotos</div>
+					<div class="album" style="background-image: url('images/background.jpg');">
+						<a href="#">
+							<div class="album-header">
+								<h3 class="album-title">Título do álbum</h3>
+								<i class="fas fa-user-friends align-right"></i>
+							</div>
+							<div class="album-footer">42 fotos</div>
+						</a>
+					</div>
+					
+					<div class="album" style="background-image: url('images/imagem-vertical.jpg');">
+						<a href="#">
+							<div class="album-header">
+								<h3 class="album-title">Título do álbum</h3>
+								<i class="fas fa-lock align-right"></i>
+							</div>
+							<div class="album-footer">16 fotos</div>
+						</a>
 					</div>
 					<?php
 						}
 					?>
+				</div>
+				<div class="page-footer">
+					<ul class="pagination">
+						<li><a href="#">Anterior</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">Próxima</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
