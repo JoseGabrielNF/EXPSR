@@ -26,7 +26,7 @@
 				<li><a href="index.php">Sair</a></li>
 			</ul>
 		</nav>
-		<div class="body">
+		<div class="dashboard-body">
 			<div class="container">
 				<div class="page-header">
 					<h2 class="page-title">Meus álbuns</h2>

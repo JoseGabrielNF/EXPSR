@@ -14,10 +14,7 @@
 				<a href="index.php">EXPSR</a>
 			</div>
 			<ul>
-				<li><a href="index.php">Início</a></li>
-				<li><a href="#sobre">Sobre nós</a></li>
-				<li><a href="#planos">Planos</a></li>
-				<li class="push alt"><a href="login.php">Já possui uma conta?</a></li>
+				<li class="alt align-right"><a href="login.php">Entrar</a></li>
 			</ul>
 		</div>
 	</nav>

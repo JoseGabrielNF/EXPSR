@@ -19,14 +19,14 @@
 				<span class="description">5 álbuns - 47 fotos</span>
 			</div>
 			<ul>
-				<li><a href="perfil.php">Meu perfil</a></li>
+				<li><a href="#">Meu perfil</a></li>
 				<li class="active"><a href="upload.php">Upload</a></li>
-				<li><a href="#">Álbuns</a></li>
+				<li><a href="albuns.php">Álbuns</a></li>
 				<li><a href="#">Amigos</a></li>
 				<li><a href="index.php">Sair</a></li>
 			</ul>
 		</nav>
-		<div class="body">
+		<div class="dashboard-body">
 			<div class="container">
 				<div class="page-header">
 					<h2 class="page-title">Upload de foto</h2>
