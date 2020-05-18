@@ -14,7 +14,7 @@
 				<a href="index.php">EXPSR</a>
 			</div>
 			<ul>
-				<li class="alt align-right"><a href="login.php">Entrar</a></li>
+				<li class="alt align-right"><a href="index.php?acao=login">Entrar</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -27,19 +27,19 @@
 					<h1>Criar Conta</h1> 
 					<p> 
 						<h1 class="nomeInput">Usuário:</h1>
-						<input required="required" type="text" name="usuario" placeholder="Insira seu nome de usuário" />
+						<input required="required" type="text" id="nome" name="nome" placeholder="Insira seu nome de usuário" />
 					</p>
 					<p> 
 						<h1 class="nomeInput">E-mail:</h1>
-						<input required="required" type="email" name="email" placeholder="Insira seu e-mail"/> 
+						<input required="required" type="email" id="email" name="email" placeholder="Insira seu e-mail" type="email"/> 
 					</p>
 					<p>
 						<h1 class="nomeInput">Senha:</h1>
-						<input required="required" type="password" name="senha" placeholder="Insira sua senha"/>
+						<input required="required" type="password" id="senha" name="senha" placeholder="Insira sua senha"/>
 					</p>
 					<p> 
 						<h1 class="nomeInput">Repetir Senha:</h1>
-						<input required="required" type="password" name="senha2" placeholder="Repita a senha inserida acima"/>
+						<input required="required" type="password" id="senha2" name="senha2" placeholder="Repita a senha inserida acima"/>
 					</p>
 					<p> 
 						<input type="submit" value="Criar Conta"/> 

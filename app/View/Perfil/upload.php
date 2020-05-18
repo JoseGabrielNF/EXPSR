@@ -15,15 +15,15 @@
 				<img src="images/profile-picture.jpg" alt="Fulano da Silva">
 			</div>
 			<div class="info">
-				<h1 class="name">Fulano da Silva</h1>
+				<h1 class="name">@<?= $data->nome;?></h1>
 				<span class="description">5 álbuns - 47 fotos</span>
 			</div>
 			<ul>
-				<li><a href="#">Meu perfil</a></li>
-				<li class="active"><a href="upload.php">Upload</a></li>
-				<li><a href="albuns.php">Álbuns</a></li>
+				<li><a href="perfil.php?acao=meuperfil">Meu perfil</a></li>
+				<li class="active"><a href="perfil.php?acao=upload">Upload</a></li>
+				<li><a href="perfil.php?acao=albuns">Álbuns</a></li>
 				<li><a href="#">Amigos</a></li>
-				<li><a href="index.php">Sair</a></li>
+				<li><a href="perfil.php?acao=sair">Sair</a></li>
 			</ul>
 		</nav>
 		<div class="dashboard-body">

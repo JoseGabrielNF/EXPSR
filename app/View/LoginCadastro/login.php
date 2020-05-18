@@ -14,7 +14,7 @@
 				<a href="index.php">EXPSR</a>
 			</div>
 			<ul>
-				<li class="alt align-right"><a href="cadastro.php">Criar conta</a></li>
+				<li class="alt align-right"><a href="index.php?acao=cadastrar">Criar conta</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -26,8 +26,8 @@
 			 <form method="post"> 
 					<h1>Faça seu Login</h1> 
 					<p> 
-						<h1 class="nomeInput">Usuário:</h1>
-						<input required="required" type="text" name="usuario" placeholder="Insira seu nome de usuário" />
+						<h1 class="nomeInput">Email:</h1>
+						<input required="required" type="text" name="email" placeholder="Insira seu email" />
 					</p>
 					<p>
 						<h1 class="nomeInput">Senha:</h1>
