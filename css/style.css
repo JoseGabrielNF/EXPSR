@@ -14,9 +14,13 @@
 	margin-left: auto;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	width: 100%;
-	height: 100vh;
+	height: calc(100% - 50px);
 	font-family: 'Asap Condensed', sans-serif;
 }
 
@@ -121,7 +125,7 @@ a:hover {
 }
 
 section {
-	height: calc(100% - 50px);
+	height: 100%;
 }
 
 section .title {
@@ -130,7 +134,7 @@ section .title {
 }
 
 .background {
-	height: calc(100% - 50px);
+	height: 100%;
 	background-image: url('../images/background.jpg');
 	background-size: cover;
 	background-position: center;
@@ -159,103 +163,84 @@ section .title {
 	text-shadow: 1px 1px 1px #4e4e4e;
 }
 
-.backgroundLogin {
-	height: calc(100% - 50px);
-	background-image: url('../images/backgroundLogin.jpg');
-	background-size: 100%;
+.auth-background {
+	background-image: url('../images/background.jpg');
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+
+.form-container {
+	height: 100%;
+	min-height: 250px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
-.login {
-	width: 300px;
-	height: 250px;
-	align-self: center;
-}
-
-.backgroundCadastro {
-	height: calc(100% - 50px);
-	background-image: url('https://mocah.org/thumbs/105262-kata-noi-beach-karon-thailand-best-beaches-of-2016-travellers-choice-awards-2016.jpg');
-	background-size: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
+.auth-form {
+	width: 500px;
+	min-height: 243px;
+	max-width: 100%;
+	font-size: 14px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 3px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-}
- /*estilo do quadrado de cadastro*/
- .cadastro {
-	width: 300px;
-	height: 380px;
-	margin-left: 50px;
 }
 
-form input {
+.auth-form h1 {
+	font-size: 28px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+.auth-form label {
+	color: #000;
+}
+
+.auth-form input {
+	font-size: 16px;
 	outline: none;
-	width: 100%;
-	margin-top: 4px;
-	padding: 10px;    
+	padding: 10px;
 	border: none;
-	background-color: #C4C4C4;
-}
-      
-  /*estilo do botão submit */
-form input.login[type="submit"]{
-	height: 9%;
-	width: 50%;
-	cursor: pointer;  
-	background: rgb(0, 129, 11);
-	color: #fff;
-	font-size: 15px;  
-	border: 1px solid #fff;  
-	margin-top: 20px; 
-	border-radius: 15px;
-	margin-left: 25%;
-}
-   
-  /*estilo do botão submit no hover */
-form input.login[type="submit"]:hover{
-	background: rgba(8, 250, 0, 0.986);
+	font-family: 'Asap Condensed', sans-serif;
 }
 
-form input[type="submit"]{
+.auth-form input:not([type="submit"]) {
 	width: 100%;
-	cursor: pointer;  
-	background: #D33232;
+	background-color: rgb(240, 240, 240);
+	border-radius: 3px;
+	margin: 2px 0 10px 0;
+}
+
+.auth-form input[type="submit"] {
 	color: #fff;
-	font-size: 20px;  
-	border: 1px solid #fff;  
-	margin-top: 20px; 
-	border-radius: 15px;
-}
-   
-  /*estilo do botão submit no hover */
-form input[type="submit"]:hover{
-	background: rgba(255, 0, 0, 0.986);
-}
-
-form input:not([type="submit"]){
-	margin-left: 5px;
-	width: 96%;
-	border-radius: 15px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: #000;
+	padding: 10px 30px;
+	border-radius: 3px;
+	margin-top: 20px;
+	transition: 0.2s;
+	cursor: pointer;
 }
 
-/*nome dos inputs*/
-form h1.nomeInput{
-	margin-left: 5px;
-	color: #413b01;
-	font-size: 15px;
-	margin-top: 8;
+.auth-form input[type="submit"]:hover {
+	background-color: #e84e47;
 }
 
-form p.termo {
-	font-size: 15px;
-	color: #666666;
+.auth-form .termo {
+	text-align: center;
+	margin-top: 10px;
 }
 
-form h1:not(.nomeInput) {
-	margin-bottom: 15px;
+.auth-form .termo a {
+	color: #e84e47;
+}
+
+.auth-form .termo a:hover {
+	text-decoration: underline;
 }
