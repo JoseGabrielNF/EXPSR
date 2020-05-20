@@ -13,11 +13,11 @@
 				<div class="page-header">
                     <div class="menu-button" onclick="toggleSidebar()">
 						<div class="row"></div><div class="row"></div><div class="row"></div>
-					</div>
+					</div> 
 					<h2 class="page-title">Enviar imagem</h2>
                 </div>
                 <div class="upload-photo">
-                    <form enctype="multipart/form-data" action="upload.php" method="POST">
+                    <form enctype="multipart/form-data" method="POST">
                         Enviar esse arquivo (Max 15MB): <input type="file" name="photoToUpload"/>
                         <input type="submit" value=" Enviar arquivo " />
                     </form>
