@@ -19,9 +19,7 @@
 						<?php
 						require 'app/Model/Imagens.php';
 						$imagem = Imagens::listar($data->email);
-					?>-->
-
-						<h2><?= $data->caminho ?> </h2>
+					?>-->	
 				</div>
 				
 			</div>
