@@ -19,10 +19,13 @@
 				</div>
 				<div class="albums">
 					<?php
+					require 'app/Model/Imagens.php';
+					$imagem = Imagens::listar($data->email);
+					
 						for ($i = 0; $i < 7; $i++) {
 					?>
 
-					<div class="album" style="background-image: url('images/background.jpg');">
+					<div class="album" style="background-image: url('<?= $imagem[$i]?>');">
 						<a href="#">
 							<div class="album-header">
 								<h3 class="album-title">Título do álbum</h3>
@@ -32,15 +35,6 @@
 						</a>
 					</div>
 					
-					<div class="album" style="background-image: url('images/imagem-vertical.jpg');">
-						<a href="#">
-							<div class="album-header">
-								<h3 class="album-title">Título do álbum</h3>
-								<i class="fas fa-lock align-right"></i>
-							</div>
-							<div class="album-footer">16 fotos</div>
-						</a>
-					</div>
 					<?php
 						}
 					?>

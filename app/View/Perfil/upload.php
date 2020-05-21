@@ -22,6 +22,7 @@
                         <input type="submit" value=" Enviar arquivo " />
                     </form>
                     <?php
+                    require 'app/Model/Imagens.php';
                         if(isset($_FILES['photoToUpload']) && $_FILES["photoToUpload"]["error"] == 0)
                         {
                             echo "<p>name: " . $_FILES["photoToUpload"]["name"] . "</p>";
@@ -60,6 +61,9 @@
                                 if (move_uploaded_file($_FILES["photoToUpload"]["tmp_name"], $target_file)) {
                                     echo "<p>Foto " . basename( $_FILES["photoToUpload"]["name"]) . " armazenada com sucesso.</p>";
                                     echo "<img src='" . $target_file . "' alt='" . $_FILES["photoToUpload"]["name"] . "' align='middle' style='margin:0px 50px'>";
+                                    // Como a imagem passou em todas as validações, abaixo vamos salva-la no banco e relacionarmos com o usuario.
+                                    $imagem = new Imagens($data->email, $target_file);
+                                    $imagem->salvar();
                                 } else {
                                     echo "<p>Erro ao armazenar foto, tente novamente.</p>";
                                 }

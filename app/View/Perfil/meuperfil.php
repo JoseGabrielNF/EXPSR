@@ -15,6 +15,13 @@
 						<div class="row"></div><div class="row"></div><div class="row"></div>
 					</div>
 					<h2 class="page-title">Meu perfil</h2>
+					<!-- O código abaixo está comentado
+						<?php
+						require 'app/Model/Imagens.php';
+						$imagem = Imagens::listar($data->email);
+					?>-->
+
+						<h2><?= $data->caminho ?> </h2>
 				</div>
 				
 			</div>

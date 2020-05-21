@@ -32,11 +32,18 @@ final class Banco {
         $db = self::getInstance();
         $db->exec('
             CREATE TABLE IF NOT EXISTS Usuarios (
-                email TEXT PRIMARY KEY,
+                email TEXT TEXT PRIMARY KEY,
                 senha TEXT,
                 nome TEXT
             )
         ');
+
+        $db->exec('           
+             CREATE TABLE IF NOT EXISTS Imagens (
+            email_user TEXT,
+            caminho TEXT, 
+            FOREIGN KEY(email_user) REFERENCES Usuarios(email)
+        )');
     }
 }
 
