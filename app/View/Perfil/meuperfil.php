@@ -11,9 +11,6 @@
 		<div class="dashboard-body">
 			<div class="container">
 				<div class="page-header">
-					<div class="menu-button" onclick="toggleSidebar()">
-						<div class="row"></div><div class="row"></div><div class="row"></div>
-					</div>
 					<h2 class="page-title">Meu perfil</h2>
 					<!-- O código abaixo está comentado
 						<?php

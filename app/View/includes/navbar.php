@@ -3,6 +3,11 @@
 ?>
 <nav class="menu">
 		<div class="container">
+			<?php if ($page != 'index.php') { ?>
+			<div class="menu-button" onclick="toggleSidebar()">
+				<div class="row"></div><div class="row"></div><div class="row"></div>
+			</div>
+			<?php } ?>
 			<div class="logo">
 				<a href="index.php">EXPSR</a>
 			</div>

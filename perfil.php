@@ -19,6 +19,9 @@ switch ($_GET['acao']) {
     case 'albuns':
         $controller->albuns();
         break;
+    case 'album':
+        $controller->album();
+        break;
     case 'upload':
         $controller->upload();
         break;

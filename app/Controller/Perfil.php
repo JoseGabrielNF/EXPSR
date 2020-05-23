@@ -24,6 +24,10 @@ class PerfilController extends Controller  {
         $this->view('Perfil/albuns', $this->loggedUser);  
     }
 
+    public function album() {
+        $this->view('Perfil/album', $this->loggedUser);
+    }
+
     public function amigos() {
         $this->view('Perfil/amigos', $this->loggedUser);  
     }

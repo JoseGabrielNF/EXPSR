@@ -11,9 +11,6 @@
 		<div class="dashboard-body">
 			<div class="container">
 				<div class="page-header">
-					<div class="menu-button" onclick="toggleSidebar()">
-						<div class="row"></div><div class="row"></div><div class="row"></div>
-					</div>
 					<h2 class="page-title">Meus álbuns</h2>
 					<button class="button align-right">Criar álbum</button>
 				</div>
@@ -22,7 +19,8 @@
 					require 'app/Model/Imagens.php';
 					$imagem = Imagens::listar($data->email);
 					
-						for ($i = 0; $i < 7; $i++) {
+					for ($i = 0; $i < sizeof($imagem); $i++) {
+					
 					?>
 
 					<div class="album" style="background-image: url('<?= $imagem[$i]?>');">
@@ -36,7 +34,7 @@
 					</div>
 					
 					<?php
-						}
+					}
 					?>
 				</div>
 				<div class="page-footer">

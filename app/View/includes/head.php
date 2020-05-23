@@ -4,3 +4,4 @@
 	<link rel="stylesheet" href="css/dashboard.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 	<script src="js/sidebar.js"></script>
+	<script src="js/modal.js"></script>
