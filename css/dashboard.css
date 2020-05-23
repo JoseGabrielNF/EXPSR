@@ -296,27 +296,35 @@
 	margin-bottom: 20px;
 }
 
-.upload-form {
+.modal-form {
 	font-size: 14px;
 	display: flex;
 	flex-direction: column;
 }
 
-.upload-form input[type="file"] {
+.modal-form input:not([type="submit"]):not([type="file"]) {
+	outline: none;
+	background-color: rgb(240, 240, 240);
+	font-family: 'Asap Condensed', sans-serif;
+	padding: 10px;
+	border: none;
+	margin: 2px 0 10px 0;
+}
 
+.modal-form input[type="file"] {
 	font-family: 'Asap Condensed', sans-serif;
 	margin: 2px 0 10px 0;
 }
 
-.upload-form select {
-	height: 25px;
+.modal-form select {
 	outline: none;
-	border: none;
 	background-color: rgb(240, 240, 240);
+	padding: 10px;
+	border: none;
 	border-radius: 3px;
 	margin: 2px 0 10px 0;
 }
-.upload-form textarea {
+.modal-form textarea {
 	height: 100px;
 	font-family: 'Asap Condensed', sans-serif;
 	resize: none;
@@ -328,7 +336,7 @@
 }
 
 
-.upload-form input[type="submit"] {
+.modal-form input[type="submit"] {
 	color: #fff;
 	font-size: 16px;
 	font-weight: bold;

@@ -48,7 +48,7 @@
 	<div class="modal-background">
 		<div class="modal">
 			<h1 class="modal-title">Adicionar imagem</h1>
-			<form action="" class="upload-form">
+			<form action="" class="modal-form">
 				<input type="file" id="upload-button" name="photoToUpload"/>
 				<label for="visibilidade">Visibilidade</label>
 				<select id="visibilidade">

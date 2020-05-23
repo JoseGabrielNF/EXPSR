@@ -12,7 +12,7 @@
 			<div class="container">
 				<div class="page-header">
 					<h2 class="page-title">Meus álbuns</h2>
-					<button class="button align-right">Criar álbum</button>
+					<button class="button align-right" onclick="toggleModal()"><i class="far fa-images"></i> Criar</button>
 				</div>
 				<div class="albums">
 					<?php
@@ -49,6 +49,21 @@
 					</ul>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="modal-background">
+		<div class="modal">
+			<h1 class="modal-title">Criar álbum</h1>
+			<form action="" class="modal-form">
+				<label for="titulo">Título do álbum</label>
+				<input type="text" id="titulo">
+				<label for="visibilidade">Visibilidade</label>
+				<select id="visibilidade">
+					<option value="publico">Público</option>
+					<option value="privado">Privado</option>
+				</select>
+				<input type="submit" value="Criar álbum">
+			</form>
 		</div>
 	</div>
 </body>
