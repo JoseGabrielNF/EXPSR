@@ -12,7 +12,7 @@ $controller = new PerfilController();
 /**
 * Seleciona a rota correta.
 */
-switch ($_GET['acao']) {
+switch ($_GET['acao']) { 
     case 'meuperfil':
         $controller->meuperfil();
         break;
@@ -22,9 +22,9 @@ switch ($_GET['acao']) {
     case 'album':
         $controller->album();
         break;
-    case 'upload':
-        $controller->upload();
-        break;
+    case 'imagens':
+        $controller->imagens();
+        break; 
     case 'sair':
         $controller->sair();
         break;        

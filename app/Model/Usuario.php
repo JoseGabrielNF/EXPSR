@@ -19,7 +19,7 @@ class Usuario {
     */
     private $nome;
 
-    function __construct(string $email, string $senha, string $nome) {
+    function __construct(string $email, string $senha, string $nome) { 
         $this->email = $email;
         $this->senha = hash('sha256', $senha);
         $this->nome = $nome;
@@ -72,6 +72,22 @@ class Usuario {
         } else {
             return NULL;
         }
+    }
+
+    public static function quantidade(string $email) {
+        $db = Banco::getInstance();
+        $stmt = $db->prepare('SELECT count(*) FROM Albuns WHERE email_user = :email');
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+        $resultado = $stmt->fetch();
+        $quantidade['albuns'] = $resultado[0];
+
+        $stmt = $db->prepare('SELECT count(*) FROM Imagens WHERE email_user = :email');
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+        $resultado = $stmt->fetch();
+        $quantidade['imagens'] = $resultado[0]; 
+        return $quantidade;
     }
 
 }

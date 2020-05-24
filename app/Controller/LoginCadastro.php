@@ -30,7 +30,7 @@ class LoginCadastroController extends Controller  {
             
 
             if ($this->loggedUser) {
-                header('Location: perfil.php?acao=meuperfil');
+                header('Location: perfil.php?acao=meuperfil'); 
             } else {
                 header('Location: index.php?email=' . $_POST['email'] . '&mensagem=Usuário e/ou senha incorreta!');
             }

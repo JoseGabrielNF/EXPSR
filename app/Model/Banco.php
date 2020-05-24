@@ -38,12 +38,25 @@ final class Banco {
             )
         ');
 
-        $db->exec('           
-             CREATE TABLE IF NOT EXISTS Imagens (
+        $db->exec('            
+            CREATE TABLE IF NOT EXISTS Albuns (
             email_user TEXT,
-            caminho TEXT, 
+            nomeAlbum TEXT, 
+            visibilidade TEXT,
             FOREIGN KEY(email_user) REFERENCES Usuarios(email)
         )');
+
+        $db->exec('            
+            CREATE TABLE IF NOT EXISTS Imagens (
+            email_user TEXT,
+            nomeAlbum TEXT,
+            caminho TEXT, 
+            descricao TEXT,
+            FOREIGN KEY(email_user) REFERENCES Usuarios(email),
+            FOREIGN KEY(nomeAlbum) REFERENCES Albuns(nomeAlbuns)
+        )');        
+
+
     }
 }
 

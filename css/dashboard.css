@@ -11,8 +11,9 @@
 	width: 200px;
 	height: 100%;
 	position: fixed;
-	visibility: hidden;
+	visibility: visible;
 	margin-top: 50px;
+	
 }
 
 .dashboard .sidebar .user-image {
@@ -78,6 +79,7 @@
 	min-height: calc(100% - 50px);
 	color: #000;
 	margin-top: 50px;
+	margin-left: 200px;
 }
 
 .dashboard .page-header,

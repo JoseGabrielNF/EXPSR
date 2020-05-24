@@ -21,19 +21,34 @@ class PerfilController extends Controller  {
     }
 
     public function albuns() {
-        $this->view('Perfil/albuns', $this->loggedUser);  
+        $this->view('Perfil/albuns', $this->loggedUser); 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $album = new Albuns($this->loggedUser->email ,$_POST['nome'], $_POST['visibilidade']);
+            $album->salvar(); 
+
+            if ($this->loggedUser) {
+                header('Location: perfil.php?acao=imagens&album=' . $_POST['nome'] .'&visibilidade='. $_POST['visibilidade']); 
+            }            
+           
+        }     
     }
 
     public function album() {
         $this->view('Perfil/album', $this->loggedUser);
+        /*
+        if(isset($_POST['submit'])){
+           // header("Refresh: 5");
+            //echo "<meta http-equiv='refresh' content='5'>";
+            unset($_POST);
+        }*/
     }
 
     public function amigos() {
         $this->view('Perfil/amigos', $this->loggedUser);  
     }
 
-    public function upload() {
-        $this->view('Perfil/upload', $this->loggedUser);
+    public function imagens(){
+        $this->view('Perfil/album', $this->loggedUser);
     }
 
     public function sair() {
@@ -41,5 +56,6 @@ class PerfilController extends Controller  {
         header('Location: index.php?mensagem=Usuário deslogado com sucesso!');  
     }
 }
+
 
 ?>
