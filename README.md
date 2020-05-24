@@ -16,7 +16,7 @@ Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 <!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
 * Você deve possuir a última versão do `<linguagem/dependencia/etc>` instalado.
 * Você deve possuir uma máquina `<Windows/Linux>`.
-* Você deve ler o `<guia/link/documentação>` dos termos de uso.
+* Você deve ler o `<terms>` dos termos de uso.
 
 ## Como executar
 
