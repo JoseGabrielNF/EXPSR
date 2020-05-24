@@ -79,7 +79,7 @@
 				<textarea name="descricao" id="descricao" cols="30" rows="10" maxlength="300" placeholder="Descreva a imagem"></textarea>
 				<input action="acao=imagens&album=<?= $_GET['album']?>" type="submit" value="Adicionar imagem"/>
 			</form>
-			<?php include('uploadImagem.php');
+			<?php include('publico/uploadImagem.php');
 			//echo "<meta http-equiv='refresh' content='0'>"; ?>
 
 		</div>

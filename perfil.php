@@ -1,7 +1,7 @@
 <?php
 
 // Escode erros NOTICE
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
+error_reporting(E_ERROR | E_WARNING | E_PARSE); 
 
 /**
 * Cria uma instância do controlador para uso

@@ -7,7 +7,7 @@
 EXPSR é uma plataforma de armazenamento e compartilhamento de imagens com objetivo de expôr sua vida e trabalho por meio da fotografia.
 
 <div align="center">
- <img src="EXPSR_cloud_logo.png" height="300" />
+ <img src="publico/EXPSR_cloud_logo.png" height="300" />
 </div>
 
 ## Pré-requisitos
@@ -37,7 +37,8 @@ Para usar EXPSR, siga os seguintes passos (exemplos):
     * Ao criar um novo album podemos adicionar um titulo e selecionar a visibilidade desse album, podendo ser "Público" ou "Privado".
   * Adicionar uma nova imagem:
     * Quando entramos em um album, já criado anteriormente, podemos adicionar novas imagens que irão compor esse album. Para isso devemos fazer o upload da imagem desejada e adicionar a descrição da imagem e sua visibilidade, podendo ser "Público" ou "Privado".
-  * Visualizar as imagens de um album.
+    * Por enquanto, ao adicionar uma imagem temos que atualizar a página ou adicionar outra imagem para que a mesma seja exibida.
+  * Visualizar as miniaturas das imagens de um album.
 
 *Descreva as principais atividades, e/ou fluxos, que são possíveis de serem realizadas na aplicação.*
 
