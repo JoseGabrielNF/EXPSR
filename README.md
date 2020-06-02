@@ -1,59 +1,79 @@
-# EXPSR
+<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-<!--- Exemplos de badges. Acesse https://shields.io para outras opções. Você pode querer incluir informações de dependencias, build, testes, licença, etc. --->
-![GitHub repo size](https://img.shields.io/github/repo-size/hsborges/progweb-template)
-![GitHub contributors](https://img.shields.io/github/contributors/hsborges/progweb-template)
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
 
-EXPSR é uma plataforma de armazenamento e compartilhamento de imagens com objetivo de expôr sua vida e trabalho por meio da fotografia.
+## About Laravel
 
-<div align="center">
- <img src="publico/EXPSR_cloud_logo.png" height="300" />
-</div>
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## Pré-requisitos
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
-<!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
-* Você deve possuir a última versão do `<linguagem/dependencia/etc>` instalado.
-* Você deve possuir uma máquina `<Windows/Linux>`.
-* Você deve ler o `<terms>` dos termos de uso.
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Como executar
+## Learning Laravel
 
-* Inicialize um servidor local.
-* Adicione os arquivos do EXPSR ao servidor.
-* Abra o navegador e digite o seguinte endereço: `http://localhost/EXPSR`
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-## Usando EXPSR
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-Para usar EXPSR, siga os seguintes passos (exemplos):
+## Laravel Sponsors
 
-* Abra o navegador e digite o seguinte endereço: `http://localhost/EXPSR`
-* Ao abrir a aplicação você poderá:
-  * Fazer login, caso já tenha uma conta, ou
-  * Realizar um novo cadastro.
-* Ao entrarmos com um usuário podemos:
-  * Criar um novo album de imagens:
-    * Ao criar um novo album podemos adicionar um titulo e selecionar a visibilidade desse album, podendo ser "Público" ou "Privado".
-  * Adicionar uma nova imagem:
-    * Quando entramos em um album, já criado anteriormente, podemos adicionar novas imagens que irão compor esse album. Para isso devemos fazer o upload da imagem desejada e adicionar a descrição da imagem e sua visibilidade, podendo ser "Público" ou "Privado".
-    * Por enquanto, ao adicionar uma imagem temos que atualizar a página ou adicionar outra imagem para que a mesma seja exibida.
-  * Visualizar as miniaturas das imagens de um album.
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-*Descreva as principais atividades, e/ou fluxos, que são possíveis de serem realizadas na aplicação.*
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- [UserInsights](https://userinsights.com)
+- [Fragrantica](https://www.fragrantica.com)
+- [SOFTonSOFA](https://softonsofa.com/)
+- [User10](https://user10.com)
+- [Soumettre.fr](https://soumettre.fr/)
+- [CodeBrisk](https://codebrisk.com)
+- [1Forge](https://1forge.com)
+- [TECPRESSO](https://tecpresso.co.jp/)
+- [Runtime Converter](http://runtimeconverter.com/)
+- [WebL'Agence](https://weblagence.com/)
+- [Invoice Ninja](https://www.invoiceninja.com)
+- [iMi digital](https://www.imi-digital.de/)
+- [Earthlink](https://www.earthlink.ro/)
+- [Steadfast Collective](https://steadfastcollective.com/)
+- [We Are The Robots Inc.](https://watr.mx/)
+- [Understand.io](https://www.understand.io/)
+- [Abdel Elrafa](https://abdelelrafa.com)
+- [Hyper Host](https://hyper.host)
+- [Appoly](https://www.appoly.co.uk)
+- [OP.GG](https://op.gg)
+- [云软科技](http://www.yunruan.ltd/)
 
-## Contribuidores
+## Contributing
 
-As seguintes pessoas contribuiram para este projeto:
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-* [José Gabriel](https://github.com/JoseGabrielNF)
-* [Tobias Argenton Gehlen](https://github.com/TobiasGehlen)
-* [Vinícius Oliveira](https://github.com/oliveirabr)
-* [Luiz Felipe de Oliveira](https://github.com/LuizFelps)
-* [Rafael Cardenas Cardoso](https://github.com/Rafael-Eng)
+## Code of Conduct
 
-## Licença de uso
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-<!--- Se não tiver certeza de qual, verifique este site: https://choosealicense.com/--->
-Este projeto usa a seguinte licença: [MIT License](<https://github.com/JoseGabrielNF/EXPSR/blob/master/LICENSE>).
-<!--- *Você também deve criar um arquivo chamado LICENSE no projeto*--->
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
