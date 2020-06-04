@@ -1,11 +1,11 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 @section('title', 'Meus álbuns')
 @section('content')
-
+        <div class="content">
             <div class="container">
                 <div class="header">
                     <h2 class="page-title">Meus álbuns</h2>
-                    <button class="align-right">Criar álbum</button>
+                    <button class="align-right"><i class="far fa-images"></i> Criar</button>
                 </div>
                 
                 @if(count($albums) > 0)
@@ -37,10 +37,10 @@
                 
                 @else
 
-                <div class="error-message"><i class="fas fa-search"></i>Desculpe, você não possui nenhum álbum!</div>
+                <div class="error-message"><i class="fas fa-exclamation-circle"></i>Desculpe, você não possui nenhum álbum!</div>
                 
                 @endif
 
             </div>
-
+        </div>
 @endsection

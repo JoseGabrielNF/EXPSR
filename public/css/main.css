@@ -24,7 +24,18 @@ a {
   margin: 0 auto;
   display: inherit;
   flex-direction: inherit;
+  align-items: inherit;
+}
+
+.container.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+
+body {
+  height: calc(100vh - 50px);
 }
 
 body .navbar {
@@ -43,48 +54,79 @@ body .navbar .logo {
   margin-right: 20px;
 }
 
-body .navbar ul {
+body .navbar ul.nav-list {
   width: 100%;
   list-style: none;
   display: flex;
   align-items: center;
 }
 
-body .navbar ul li {
+body .navbar ul.nav-list li.nav-item {
   font-size: 13px;
   text-transform: uppercase;
   margin-right: 10px;
+  position: relative;
+  line-height: 50px;
+  vertical-align: middle;
   transition: 0.2s;
 }
 
-body .navbar ul li.alt {
-  margin-right: 5px;
+body .navbar ul.nav-list li.nav-item:hover {
+  color: #e84e47;
 }
 
-body .navbar ul li.alt a {
-  color: #fff;
-  font-weight: bold;
-  background-color: #000;
-  padding: 7px 12px;
-  border-radius: 3px;
-  transition: 0.2s;
-  display: block;
+body .navbar ul.nav-list li.nav-item:hover .dropdown {
+  display: flex;
 }
 
-body .navbar ul li.alt a:hover {
-  background-color: #e84e47;
-}
-
-body .navbar ul li:not(.alt):hover {
-  font-weight: bold;
-}
-
-body .navbar ul li:last-child {
+body .navbar ul.nav-list li.nav-item:last-child {
   margin-right: 0;
+}
+
+body .navbar ul.nav-list li.nav-item .dropdown {
+  min-width: 150px;
+  background-color: #fff;
+  list-style: none;
+  padding: 0 10px;
+  border-radius: 0 0 3px 3px;
+  border: 1px solid #e84e47;
+  position: absolute;
+  right: 0;
+  display: none;
+  flex-direction: column;
+}
+
+body .navbar ul.nav-list li.nav-item .dropdown .dropdown-item {
+  width: 100%;
+  color: #000;
+  font-weight: normal;
+  border-bottom: 1px solid #e84e47;
+  transition: 0.2s;
+  line-height: initial;
+}
+
+body .navbar ul.nav-list li.nav-item .dropdown .dropdown-item:hover {
+  color: #e84e47;
+}
+
+body .navbar ul.nav-list li.nav-item .dropdown .dropdown-item:last-child {
+  border: none;
+}
+
+body .navbar ul.nav-list li.nav-item .dropdown .dropdown-item a {
+  padding: 10px 5px;
+  display: block;
 }
 
 body .content {
   height: 100%;
+}
+
+body .content.bg {
+  background-image: url("/img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 body .content .header {
@@ -129,6 +171,13 @@ body .content .header button {
   outline: none;
   transition: 0.2s;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+body .content .header button i {
+  margin-right: 5px;
 }
 
 body .content .header button:hover {
@@ -226,53 +275,53 @@ body .content .images .image {
 
 body .content .error-message {
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   color: #a7a7a7;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
-}
-
-body .content form {
-  width: 350px;
   display: flex;
   flex-direction: column;
 }
 
-body .content form .input-header {
-  margin-top: 5px;
-  display: flex;
-  flex-direction: row;
+body .content .error-message i {
+  margin-bottom: 20px;
 }
 
-body .content form .input-header label {
+body .content .form-container {
+  width: 390px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+body .content .form-container .form-title {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+body .content .form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+body .content .form-container form label {
   color: #000;
   font-size: 14px;
 }
 
-body .content form .input-header span.error {
-  font-size: 14px;
-  color: #ff3434;
-  margin-left: auto;
-}
-
-body .content form input {
+body .content .form-container form input {
   outline: none;
   padding: 7px 5px;
   border-radius: 3px;
   border: 1px solid #c7c7c7;
 }
 
-body .content form input.error,
-body .content form input:required:focus {
-  border: 1px solid #ff3434;
-  box-shadow: none;
+body .content .form-container form input[type=checkbox] {
+  margin-right: 5px;
 }
 
-body .content form button {
+body .content .form-container form button {
   color: #e84e47;
   font-size: 13px;
   font-weight: bold;
@@ -283,12 +332,41 @@ body .content form button {
   border: 1px solid #e84e47;
   margin-top: 5px;
   transition: 0.2s;
-  align-self: flex-end;
 }
 
-body .content form button:hover {
+body .content .form-container form button:hover {
   color: #fff;
   background-color: #e84e47;
+}
+
+body .content .form-container form a {
+  color: #e84e47;
+  font-size: 14px;
+}
+
+body .content .form-container form a:hover {
+  text-decoration: underline;
+}
+
+body .content .form-container form .row {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+body .content .form-container form span {
+  font-size: 14px;
+}
+
+body .content .form-container form span.error {
+  color: #ff3434;
+  margin-left: auto;
+}
+
+body .content .form-container form span.terms {
+  margin-top: 5px;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {

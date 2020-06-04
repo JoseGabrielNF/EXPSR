@@ -19,29 +19,42 @@
 
     <!-- Styles -->
     <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <div class="logo">EXPSR</div>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Explorar</a></li>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#">Início</a></li>
+                <li class="nav-item"><a href="#">Explorar</a></li>
 @guest
-                <li class="alt align-right"><a href="{{ route('login') }}">Entrar</a></li>
+                <li class="nav-item align-right"><a href="{{ route('login') }}">Entrar</a></li>
 @if (Route::has('register'))
-                <li class="alt"><a href="{{ route('register') }}">Criar conta</a></li>
+                <li class="nav-item"><a href="{{ route('register') }}">Criar conta</a></li>
 @endif
 @else
-                <li class="align-right"><a href="">{{ Auth::user()->username }}</a></li>
+                <li class="nav-item align-right">
+                    &#64;{{ Auth::user()->username }}
+                    <ul class="dropdown">
+                        <li class="dropdown-item"><a href="#">Perfil</a></li>
+                        <li class="dropdown-item"><a href="{{ url('/albums') }}">Álbuns</a></li>
+                        <li class="dropdown-item"><a href="#">Amigos</a></li>
+                        <li class="dropdown-item"><a href="#">Configurações</a></li>
+                        <li class="dropdown-item">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Desconectar</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>    
+                </li>
 @endguest
             </ul>
         </div>
     </nav>
-    <div class="content">
 @yield('content')
-    </div>
     
     <!--
     <div id="app">

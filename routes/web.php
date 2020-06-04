@@ -17,8 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/albums', 'AlbumController@index');
-Route::get('/albums/{id}', 'AlbumController@show');
+Route::get('/albums', 'AlbumController@index')->middleware('auth');
+Route::get('/albums/{id}', 'AlbumController@show')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
