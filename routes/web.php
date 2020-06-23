@@ -18,7 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('/albums', 'AlbumController@index')->middleware('auth');
-Route::get('/albums/{id}', 'AlbumController@show')->middleware('auth');
+Route::get('/album/{id}', 'AlbumController@show');
+
+Route::post('/albums', 'AlbumController@createAlbum')->middleware('auth');
+Route::post('/album', 'AlbumController@addImage')->middleware('auth');
+
+Route::get('/image/{id}', 'ImageController@show');
 
 Auth::routes();
 

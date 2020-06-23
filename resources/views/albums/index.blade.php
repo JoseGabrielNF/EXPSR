@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="header">
                     <h2 class="page-title">Meus álbuns</h2>
-                    <button class="align-right"><i class="far fa-images"></i> Criar</button>
+                    <button class="align-right" onclick="toggleModal()"><i class="far fa-images"></i> Criar</button>
                 </div>
                 
                 @if(count($albums) > 0)
@@ -41,6 +41,30 @@
                 
                 @endif
 
+            </div>
+            <div class="modal-background" id="modal-background">
+                <div class="form-container">
+                    <h2 class="form-title">Criar álbum</h2>
+                    <form action="/albums" method="post">
+                        @csrf
+
+                        <div class="row">
+                            <label for="name">Nome do álbum</label>
+                        </div>
+                        <input type="text" name="name">
+
+                        <div class="row">
+                            <label for="visibility">Visibilidade</label>
+                        </div>
+                        <select name="visibility">
+                            <option value="public">Público</option>
+                            <option value="private">Privado</option>
+                        </select>
+
+                        <button type="submit">Criar</button>
+                    </form>
+                    <button class="close-modal" onclick="toggleModal()"><i class="fas fa-times"></i></button>
+                </div>
             </div>
         </div>
 @endsection

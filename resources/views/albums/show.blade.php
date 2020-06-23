@@ -26,7 +26,7 @@
                 <div class="header">
                     <h2 class="page-title">{{ $album['name'] }}</h2>
                     <span class="visibility public">Público</span>
-                    <button class="align-right"><i class="far fa-image"></i> Adicionar</button>
+                    <button class="align-right" onclick="toggleModal()"><i class="far fa-image"></i> Adicionar</button>
                 </div>
             @if(count($images) > 0)
                 <div class="images">
@@ -48,6 +48,27 @@
             @else
                 <div class="error-message"><i class="fas fa-search"></i>Esse álbum não possui nenhuma imagem!</div>
             @endif
+            </div>
+            <div class="modal-background" id="modal-background">
+                <div class="form-container">
+                    <h2 class="form-title">Adicionar imagem</h2>
+                    <form action="/album" method="post">
+                        @csrf
+                        
+                        <div class="row">
+                            <label for="image">Selecione a imagem</label>
+                        </div>
+                        <input type="file" name="image">
+                        
+                        <div class="row">
+                            <label for="description">Descrição da imagem</label>
+                        </div>
+                        <textarea name="description" maxlength="250"></textarea>
+
+                        <button type="submit">Adicionar</button>
+                    </form>
+                    <button class="close-modal" onclick="toggleModal()"><i class="fas fa-times"></i></button>
+                </div>
             </div>
         </div>
 @endsection

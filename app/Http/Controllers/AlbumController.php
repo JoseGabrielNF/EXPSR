@@ -19,4 +19,12 @@ class AlbumController extends Controller
 
         return view('albums.show', ['id' => $id]);
     }
+
+    public function createAlbum() {
+        /* Terminar de implementar */
+    }
+
+    public function addImage() {
+        /* Terminar de implementar */
+    }   
 }
