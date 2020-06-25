@@ -10,7 +10,7 @@ class AlbumController extends Controller
 {
     public function index() {
 
-        $albums = Album::where('user_id', Auth::user()->username)->get(); 
+        $albums = Album::where('user_id', Auth::user()->id)->get(); 
 
         return view('albums.index', ['albums' => $albums]);
     }
