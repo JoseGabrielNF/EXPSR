@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Album;
+use App\Image;
 use Auth;
 
 class AlbumController extends Controller
@@ -16,8 +17,9 @@ class AlbumController extends Controller
     }
 
     public function show($id) {
-
-        return view('albums.show', ['id' => $id]);
+        $album = Album::where('id', $id)->first();
+        $images = Image::where('id', $id)->get();
+        return view('albums.show', ['album' => $album, 'images' => $images]);
     }
 
     public function createAlbum() {

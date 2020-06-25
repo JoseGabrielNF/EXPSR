@@ -8,6 +8,6 @@ class ImageController extends Controller
 {
     public function show($id) {
 
-        return view('image', ['id' => $id]);
+        return view('image', ['id' => $id]); 
     }
 }

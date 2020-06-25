@@ -1,30 +1,15 @@
 @extends('layouts.app')
+
 @php
-    $images = [
-        ['url' => 'https://i.ytimg.com/vi/rklY-mJj9dc/maxresdefault.jpg'],
-        ['url' => 'https://i.ytimg.com/vi/rklY-mJj9dc/maxresdefault.jpg'],
-        ['url' => 'https://i.ytimg.com/vi/rklY-mJj9dc/maxresdefault.jpg'],
-        ['url' => 'https://i.ytimg.com/vi/rklY-mJj9dc/maxresdefault.jpg'],
-        ['url' => 'https://i.ytimg.com/vi/rklY-mJj9dc/maxresdefault.jpg'],
-        ['url' => 'https://i.ytimg.com/vi/rklY-mJj9dc/maxresdefault.jpg'],
-        ['url' => 'https://i.ytimg.com/vi/rklY-mJj9dc/maxresdefault.jpg'],
-        ['url' => 'https://i.ytimg.com/vi/rklY-mJj9dc/maxresdefault.jpg'],
-        ['url' => 'https://i.ytimg.com/vi/rklY-mJj9dc/maxresdefault.jpg'],
-        ['url' => 'https://i.ytimg.com/vi/rklY-mJj9dc/maxresdefault.jpg']
-    ];
-
-    $album = [
-        'name' => 'Paisagens',
-        'images' => $images
-    ];
-
+    //echo $album;
 @endphp
-@section('title', $album['name'])
+
+@section('title', $album->name)
 @section('content')
         <div class="content">
             <div class="container">
                 <div class="header">
-                    <h2 class="page-title">{{ $album['name'] }}</h2>
+                    <h2 class="page-title">{{ $album->name }}</h2>
                     <span class="visibility public">Público</span>
                     <button class="align-right" onclick="toggleModal()"><i class="far fa-image"></i> Adicionar</button>
                 </div>
