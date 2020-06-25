@@ -10,7 +10,7 @@ class AlbumController extends Controller
 {
     public function index() {
 
-        $albums = Album::where('user_id', Auth::user()->username)->get();
+        $albums = Album::where('user_id', Auth::user()->username)->get(); 
 
         return view('albums.index', ['albums' => $albums]);
     }
@@ -21,7 +21,23 @@ class AlbumController extends Controller
     }
 
     public function createAlbum() {
-        /* Terminar de implementar */
+        $id_user = Auth::user()->id;
+        $name =  request('name');
+
+        if (request('visibility') == 'public'){
+            $visibilidade = 1;
+        } else {
+            $visibilidade = 0;
+        }
+
+        $album = new Album;
+
+        $album->user_id = $id_user;
+        $album->name = $name;
+        $album->public = $visibilidade;
+
+        $album->save();
+
     }
 
     public function addImage() {
