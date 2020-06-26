@@ -16,7 +16,7 @@
             @if(count($images) > 0)
                 <div class="images">
             @foreach($images as $image)
-                    <div class="image" style="background-image: url({{ $image['url'] }});"></div>
+                    <a class="image" href="#" style="background-image: url('');"></a>
             @endforeach
                 </div>
                 <div class="footer">
