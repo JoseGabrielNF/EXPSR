@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/my-account', 'ProfileController@index')->middleware('auth');
+Route::get('/account/{id}', 'ProfileController@show');
+
 Route::get('/albums', 'AlbumController@index')->middleware('auth');
 Route::get('/album/{id}', 'AlbumController@show');
 

@@ -39,7 +39,7 @@
                 <li class="nav-item align-right">
                     {{ Auth::user()->username }}
                     <ul class="dropdown">
-                        <li class="dropdown-item"><a href="#">Perfil</a></li>
+                        <li class="dropdown-item"><a href="{{ url('/my-account') }}">Perfil</a></li>
                         <li class="dropdown-item"><a href="{{ url('/albums') }}">Álbuns</a></li>
                         <li class="dropdown-item"><a href="#">Amigos</a></li>
                         <li class="dropdown-item"><a href="#">Configurações</a></li>
@@ -47,6 +47,7 @@
                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Desconectar</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
+                            
                             </form>
                         </li>
                     </ul>    

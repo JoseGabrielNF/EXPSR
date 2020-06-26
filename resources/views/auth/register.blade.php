@@ -38,12 +38,12 @@
                         <span class="error">{{ $message }}</span>
                         @enderror
                     </div>
-                    <input type="text" id="password" name="password" autocomplete="new-password">
+                    <input type="password" id="password" name="password" autocomplete="new-password">
                     
                     <div class="row">
                         <label for="password-confirm">Confirme a senha</label>
                     </div>
-                    <input type="text" id="password-confirm" name="password_confirmation" autocomplete="new-password">
+                    <input type="password" id="password-confirm" name="password_confirmation" autocomplete="new-password">
                     
                     <button type="submit">Criar conta</button>
                     <span class="terms">Ao criar uma conta você concorda com nossos <a href="#">termos e condições</a>.</span>
