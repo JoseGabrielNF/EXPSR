@@ -10,7 +10,12 @@
             <div class="container">
                 <div class="header">
                     <h2 class="page-title">{{ $album->name }}</h2>
-                    <span class="visibility public">Público</span>
+                    @if($album->public == 1)
+                        <span class="visibility public">Público</span> 
+
+                    @else
+                        <span class="visibility private">Privado</span>
+                    @endif
                     <button class="align-right" onclick="toggleModal()"><i class="far fa-image"></i> Adicionar</button>
                 </div>
             @if(count($images) > 0)
