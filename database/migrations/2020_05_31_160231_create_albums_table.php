@@ -18,7 +18,7 @@ class CreateAlbumsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->boolean('public');
-            $table->timestamp('created_on', 0);
+            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
