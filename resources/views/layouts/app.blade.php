@@ -29,7 +29,7 @@
             <div class="logo">EXPSR</div>
             <ul class="nav-list">
                 <li class="nav-item"><a href="#">Início</a></li>
-                <li class="nav-item"><a href="#">Explorar</a></li>
+                <li class="nav-item"><a href="{{ route('explorer') }}">Explorar</a></li>
 @guest
                 <li class="nav-item align-right"><a href="{{ route('login') }}">Entrar</a></li>
 @if (Route::has('register'))
