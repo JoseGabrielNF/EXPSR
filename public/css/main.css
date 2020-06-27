@@ -373,6 +373,62 @@ body .content .images .image {
   margin: 2.5px;
 }
 
+body .content .followers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+body .content .followers .follower {
+  flex: 0 1 calc(25% - 5px);
+  height: 0;
+  padding-top: calc(25% - 5px);
+  margin: 2.5px;
+  position: relative;
+}
+
+body .content .followers .follower .cover {
+  width: 100%;
+  height: 50%;
+  background-color: #f2f2f2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+}
+
+body .content .followers .follower .info {
+  width: 100%;
+  height: 50%;
+  border-width: 0 1px 1px 1px;
+  border-color: #f2f2f2;
+  border-style: solid;
+  position: absolute;
+  bottom: 0;
+}
+
+body .content .followers .follower .info .profile-picture {
+  width: 150px;
+  height: 150px;
+  background-color: #f2f2f2;
+  border: 5px solid #fff;
+  border-radius: 3px;
+  position: absolute;
+  top: -100px;
+  left: calc(50% - 75px);
+}
+
+body .content .followers .follower .info .profile-picture img {
+  width: 100%;
+}
+
+body .content .followers .follower .info .user-name {
+  text-align: center;
+  padding: 5px;
+  margin-top: 25%;
+}
+
 body .content .image-container {
   /* solução encontrada em https://stackoverflow.com/a/23675095 */
   width: 100%;

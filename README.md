@@ -16,17 +16,20 @@ Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 <!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
 * Você deve possuir a última versão do `<linguagem/dependencia/etc>` instalado.
 * Você deve possuir uma máquina `<Windows/Linux>`.
-* Você deve possuir o git,php,mysql e ter instalado o composer 
+* Você deve ter instalado `git,php,mysql,composer`.
 * Você deve ler o `<terms>` dos termos de uso.
 
 ## Como executar
 * Execute os comandos pelo cmd
-* git clone https://github.com/JoseGabrielNF/EXPSR
-* Entre na pasta e digite composer install
-* copy .env.example .env
-* Na pasta .env criada digite substitua o atributo "DB_DATABASE" pelo nome do seu banco de dados criado por um servidor 
-* Execute o comando "php artisan migrate"
-* Execute o comando "php artisan serve" para iniciar o servidor
+* `git clone https://github.com/JoseGabrielNF/EXPSR`
+* `cd EXPSR`
+* `composer install`
+* `copy .env.example .env`
+* Abra o arquivo .env criado e substitua o atributo "DB_DATABASE" pelo nome do seu banco de dados criado por um servidor 
+* Execute os comandos
+* `php artisan key:generate`
+* `php artisan migrate`
+* `php artisan serve` 
 
 ## Usando EXPSR
 

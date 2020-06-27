@@ -3,8 +3,7 @@
 @section('content')
         <div class="content">
             <div class="container">
-                <div class="profile-cover">
-                </div>
+                <div class="profile-cover"></div>
                 <div class="profile-info">
                     <div class="profile-picture">
                         <!--<img src="#" alt="{{ $user->name }}">-->
@@ -33,11 +32,11 @@
 
                 @foreach($albums as $album)
 
-                    <div class="album" style="background-image: url('');">
+                    <a class="album" href="#" style="background-image: url('');">
                         <div class="album-header">
                             <h3 class="name">{{ $album->name }}</h3>
                         </div>
-                    </div>
+                    </a>
                 
                 @endforeach
 
@@ -45,8 +44,20 @@
                 @endif
 
                 <div class="profile-section">
-                    <h2 class="section-title">Amigos</h2>
+                    <h2 class="section-title">Seguidores</h2>
                     <a class="align-right" href="#">Ver todos</a>
+                </div>
+                
+                <div class="followers">
+                    <a class="follower" href="#">
+                        <div class="cover" style="background-image: url('/img/background.jpg')"></div>
+                        <div class="info">
+                            <div class="profile-picture">
+                                <img src="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg" alt="{{ $user->name }}">
+                            </div>
+                            <h3 class="user-name">{{ $user->name }}</h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

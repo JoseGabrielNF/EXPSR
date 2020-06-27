@@ -10,13 +10,18 @@
             <div class="container">
                 <div class="header">
                     <h2 class="page-title">{{ $album->name }}</h2>
-                    <span class="visibility public">Público</span>
+                    @if($album->public == 1)
+                        <span class="visibility public">Público</span> 
+
+                    @else
+                        <span class="visibility private">Privado</span>
+                    @endif
                     <button class="align-right" onclick="toggleModal()"><i class="far fa-image"></i> Adicionar</button>
                 </div>
             @if(count($images) > 0)
                 <div class="images">
             @foreach($images as $image)
-                    <div class="image" style="background-image: url({{ $image['url'] }});"></div>
+                    <a class="image" href="#" style="background-image: url('');"></a>
             @endforeach
                 </div>
                 <div class="footer">
