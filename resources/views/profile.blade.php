@@ -70,7 +70,11 @@
                 <div class="users">
                 @foreach($seguidores as $seguidor)
 
-                    <a class="user" href="#">
+                @if (Auth::user()->id == $seguidor->id)
+                    <a class="user" href="/my-account">
+                    @else
+                    <a class="user" href="/account/{{ $seguidor->username }}">
+                    @endif
                         <div class="user-content">
                             <div class="cover" style="background-image: url('/img/background.jpg')"></div>
                             <div class="info">

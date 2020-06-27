@@ -4,7 +4,7 @@
         <div class="content">
             <div class="container">
                 <div class="image-container">
-                    <img src="{{ substr($image->image_path, 26) }}" alt="Visualizar imagem">
+                    <img src="{{ $image->image_path }}" alt="Visualizar imagem">
                 </div>
                 <div class="image-info">
                     <div class="info-header">

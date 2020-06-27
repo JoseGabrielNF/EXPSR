@@ -57,7 +57,7 @@ class AlbumController extends Controller
 
         $image->user_id = $id_user;
         $image->album_id = request('album_id');
-        $image->image_path = public_path('images').'\\'.$imageName;
+        $image->image_path = '/images/'.$imageName;
         $image->description = "".request('description');
 
         $image->save();
