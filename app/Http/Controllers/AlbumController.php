@@ -17,8 +17,8 @@ class AlbumController extends Controller
     }
 
     public function show($id) {
-        $album = Album::where('id', $id)->where('user_id', Auth::user()->id)->first();
-        $images = Image::where('id', $id)->get();
+        $album = Album::where('id', $id)->firstOrFail();
+        $images = Image::where('album_id', $album->id)->get();
         return view('albums.show', ['album' => $album, 'images' => $images]);
     }
 

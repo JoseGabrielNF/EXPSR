@@ -4,7 +4,7 @@
         <div class="content">
             <div class="container">
                 <div class="image-container">
-                    <img src="/img/background.jpg" alt="Visualizar imagem">
+                    <img src="{{ substr($image->image_path, 26) }}" alt="Visualizar imagem">
                 </div>
                 <div class="image-info">
                     <div class="info-header">
@@ -18,7 +18,7 @@
                         <a href="#"><div class="username">username</div></a>
                     </div>
                     <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in consequat risus, id volutpat quam.
+                        {{ $image->description }}
                     </p>
                 </div>
             </div>
