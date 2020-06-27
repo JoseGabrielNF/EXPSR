@@ -39,7 +39,7 @@
 
                 <div class="profile-section">
                     <h2 class="section-title">Álbuns populares</h2>
-                    <a class="align-right" href="#">Ver todos</a>
+                    <a class="align-right" href="/albums">Ver todos</a>
                 </div>
                 @if(count($albums) > 0)
 
