@@ -15,8 +15,10 @@ class ProfileController extends Controller
 
         $user = Auth::user();
         $albums = Album::where('user_id', $user->id)->take(4)->get();
+        $seguidores = Followers::join('users', 'users.id', '=', 'followers.follower')->where('user_id', $user->id)->get();
 
-        return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => true]);
+
+        return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => true, 'seguidores' => $seguidores]);
     }
 
     /* controlador do perfil de um usuário específico */
