@@ -11,8 +11,7 @@
                 <div class="header">
                     <h2 class="page-title">{{ $album->name }}</h2>
                     @if($album->public == 1)
-                        <span class="visibility public">Público</span> 
-
+                        <span class="visibility public">Público</span>
                     @else
                         <span class="visibility private">Privado</span>
                     @endif
@@ -49,6 +48,7 @@
                             <label for="image">Selecione a imagem</label>
                         </div>
                         <input type="file" name="image">
+                        <input type="hidden" name="album_id" value="{{ $album->id }}">
                         
                         <div class="row">
                             <label for="description">Descrição da imagem</label>
