@@ -62,17 +62,21 @@
                     <a class="align-right" href="#">Ver todos</a>
                 </div>
                 
+                @if(count($seguidores) > 0)
                 <div class="followers">
+                @foreach($seguidores as $seguidor)
                     <a class="follower" href="#">
                         <div class="cover" style="background-image: url('/img/background.jpg')"></div>
                         <div class="info">
                             <div class="profile-picture">
-                                <img src="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg" alt="{{ $user->name }}">
+                                <img src="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg" alt="{{ $seguidor->name }}">
                             </div>
-                            <h3 class="user-name">{{ $user->name }}</h3>
+                            <h3 class="user-name">{{ $seguidor->name }}</h3>
                         </div>
                     </a>
+                @endforeach    
                 </div>
+                @endif
             </div>
         </div>
 @endsection

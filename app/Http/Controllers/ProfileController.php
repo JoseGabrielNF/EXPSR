@@ -29,6 +29,7 @@ class ProfileController extends Controller
 
         $user = User::where('username', $username)->firstOrFail();
         $albums = Album::where('user_id', $user->id)->take(4)->get();
+        $seguidores = Followers::join('users', 'users.id', '=', 'followers.follower')->where('user_id', $user->id)->get();
         $follower = Followers::where('user_id', $user->id)->where('follower', Auth::user()->id)->first();
 
         if ($follower == null){
@@ -37,7 +38,7 @@ class ProfileController extends Controller
             $follower = true;
         }
 
-        return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => false, 'follower' => $follower]);
+        return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => false, 'seguidores' => $seguidores, 'follower' => $follower]);
     }
 
     public function follower () {
