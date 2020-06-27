@@ -44,7 +44,24 @@ class AlbumController extends Controller
 
     }
 
-    public function add_image() {
-        /* Terminar de implementar */
-    }   
+    public function add_image(Request $request){
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+  
+        $id_user = Auth::user()->id;
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images'), $imageName);
+
+        $image = new Image;
+
+        $image->user_id = $id_user;
+        $image->album_id = '1';
+        $image->image_path = public_path('images').$imageName;
+        $image->description = "".request('description');
+
+        $image->save();
+
+        return back();
+    }  
 }
