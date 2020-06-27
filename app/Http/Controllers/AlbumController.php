@@ -17,7 +17,7 @@ class AlbumController extends Controller
     }
 
     public function show($id) {
-        $album = Album::where('id', $id)->first();
+        $album = Album::where('id', $id)->where('user_id', Auth::user()->id)->first();
         $images = Image::where('id', $id)->get();
         return view('albums.show', ['album' => $album, 'images' => $images]);
     }
@@ -39,6 +39,8 @@ class AlbumController extends Controller
         $album->public = $visibilidade;
 
         $album->save();
+
+        return redirect('/album/' . $album->id);
 
     }
 

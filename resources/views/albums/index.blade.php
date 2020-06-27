@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Meus álbuns')
+@php
+   // echo Auth::user()->id;
+@endphp
 @section('content')
         <div class="content">
             <div class="container">
@@ -14,7 +17,7 @@
 
                 @foreach($albums as $album)
 
-                    <a class="album" href="#" style="background-image: url('');">
+                    <a class="album" href="album/<?= $album->id?>" style="background-image: url('');">
                         <div class="album-header">
                             <h3 class="name">{{ $album->name }}</h3>
                         </div>
