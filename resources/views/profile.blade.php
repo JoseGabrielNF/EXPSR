@@ -16,7 +16,8 @@
                     </div>
                     @if(Auth::check() && !$personal)
                         @if(!$follower)
-                        <form method="POST" id="add" class="invisible" action="/follow">
+
+                        <form method="POST" id="add" style="display: none;" action="/follow">
                             @csrf
                             <input name="acao" value="seguir"> 
                             <input name="usuario" value="{{ $user->username }}"> 
@@ -24,7 +25,8 @@
                         <button type="submit" form="add" class="align-right"><i class="fas fa-user-plus"></i> Seguir</button>
                         @endif
                         @if($follower)
-                        <form method="POST" id="remove" class="invisible" action="/follow">
+
+                        <form method="POST" id="remove" style="display: none;" action="/follow">
                             @csrf
                             <input name="acao" value="deseguir"> 
                             <input name="usuario" value="{{ $user->username }}"> 
@@ -39,11 +41,9 @@
                     <h2 class="section-title">Álbuns populares</h2>
                     <a class="align-right" href="/albums">Ver todos</a>
                 </div>
-
                 @if(count($albums) > 0)
 
                 <div class="albums">
-
                 @foreach($albums as $album)
 
                     <a class="album" href="#" style="background-image: url('');">
@@ -51,32 +51,46 @@
                             <h3 class="name">{{ $album->name }}</h3>
                         </div>
                     </a>
-                
                 @endforeach
 
                 </div>
+                @else
+
+                    <div class="no-results">
+                        <div><h4 class="title">{{ $personal ? 'Você não possui álbuns!' : 'Não há álbuns a serem exibidos!' }}</h4></div>
+                    </div>
                 @endif
 
                 <div class="profile-section">
                     <h2 class="section-title">Seguidores</h2>
                     <a class="align-right" href="#">Ver todos</a>
                 </div>
-                
                 @if(count($seguidores) > 0)
-                <div class="followers">
+                
+                <div class="users">
                 @foreach($seguidores as $seguidor)
-                    <a class="follower" href="#">
-                        <div class="cover" style="background-image: url('/img/background.jpg')"></div>
-                        <div class="info">
-                            <div class="profile-picture">
-                                <img src="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg" alt="{{ $seguidor->name }}">
+
+                    <a class="user" href="#">
+                        <div class="user-content">
+                            <div class="cover" style="background-image: url('/img/background.jpg')"></div>
+                            <div class="info">
+                                <div class="profile-picture">
+                                    <img src="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg" alt="{{ $seguidor->name }}">
+                                </div>
+                                <h3 class="user-name">{{ $seguidor->name }}</h3>
                             </div>
-                            <h3 class="user-name">{{ $seguidor->name }}</h3>
                         </div>
                     </a>
                 @endforeach    
+
                 </div>
+                @else
+
+                    <div class="no-results">
+                        <div><h4 class="title">{{ $personal ? 'Você não possui seguidores!' : 'Essa conta não possui seguidores!' }}</h4></div>
+                    </div>
                 @endif
+
             </div>
         </div>
 @endsection
