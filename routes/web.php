@@ -17,19 +17,18 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::get('/my-account', 'ProfileController@index')->middleware('auth');
-Route::get('/account/{name}', 'ProfileController@show');
-Route::post('/account/{name}', 'ProfileController@follower')->middleware('auth');
-
-Route::get('/albums', 'AlbumController@index')->middleware('auth'); 
-Route::get('/album/{id}', 'AlbumController@show');
-
-Route::post('/albums', 'AlbumController@createAlbum')->middleware('auth');
-Route::post('/album', 'AlbumController@addImage')->middleware('auth');
-
-Route::get('/image/{id}', 'ImageController@show');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home'); 
 Route::get('/explorer', 'ExplorerController@index')->name('explorer');
+Route::get('/my-account', 'ProfileController@index')->middleware('auth');
+Route::get('/account/{username}', 'ProfileController@show');
+Route::get('/albums', 'AlbumController@index')->middleware('auth'); 
+Route::get('/album/{id}', 'AlbumController@show');
+Route::get('/image/{id}', 'ImageController@show');
+
+Route::post('/follow', 'ProfileController@follow')->middleware('auth');
+Route::post('/create-album', 'AlbumController@create_album')->middleware('auth');
+Route::post('/add-image', 'AlbumController@add_image')->middleware('auth');
+
+

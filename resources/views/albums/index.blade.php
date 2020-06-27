@@ -48,7 +48,7 @@
             <div class="modal-background" id="modal-background">
                 <div class="form-container">
                     <h2 class="form-title">Criar álbum</h2>
-                    <form action="/albums" method="post">
+                    <form action="/create-album" method="post">
                         @csrf
 
                         <div class="row">

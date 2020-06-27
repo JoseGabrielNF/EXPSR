@@ -22,7 +22,7 @@ class AlbumController extends Controller
         return view('albums.show', ['album' => $album, 'images' => $images]);
     }
 
-    public function createAlbum() {
+    public function create_album() {
         $id_user = Auth::user()->id;
         $name =  request('name');
 
@@ -44,7 +44,7 @@ class AlbumController extends Controller
 
     }
 
-    public function addImage() {
+    public function add_image() {
         /* Terminar de implementar */
     }   
 }

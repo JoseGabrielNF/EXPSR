@@ -42,7 +42,7 @@
             <div class="modal-background" id="modal-background">
                 <div class="form-container">
                     <h2 class="form-title">Adicionar imagem</h2>
-                    <form action="/album" method="post">
+                    <form action="/add-image" method="post">
                         @csrf
                         
                         <div class="row">

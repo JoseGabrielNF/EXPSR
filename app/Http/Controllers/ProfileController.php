@@ -43,7 +43,7 @@ class ProfileController extends Controller
         return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => false, 'seguidores' => $seguidores, 'follower' => $follower]);
     }
 
-    public function follower () {
+    public function follow () {
         $username = request('usuario');
         $follower = Auth::user()->id;
 

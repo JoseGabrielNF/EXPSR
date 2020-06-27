@@ -14,22 +14,22 @@
                             Seja bem-vindo ao meu perfil!
                         </div>
                     </div>
-                    @if(!$personal)
+                    @if(Auth::check() && !$personal)
                         @if(!$follower)
-                        <form method="POST" id="add" class="invisible" action="/account/{{ $user->name }}">
+                        <form method="POST" id="add" class="invisible" action="/follow">
                             @csrf
                             <input name="acao" value="seguir"> 
-                            <input name="usuario" value="{{ $user->name }}"> 
+                            <input name="usuario" value="{{ $user->username }}"> 
                         </form>
                         <button type="submit" form="add" class="align-right"><i class="fas fa-user-plus"></i> Seguir</button>
                         @endif
                         @if($follower)
-                        <form method="POST" id="remove" class="invisible" action="/account/{{ $user->name }}">
+                        <form method="POST" id="remove" class="invisible" action="/follow">
                             @csrf
                             <input name="acao" value="deseguir"> 
-                            <input name="usuario" value="{{ $user->name }}"> 
+                            <input name="usuario" value="{{ $user->username }}"> 
                         </form>
-                        <button type="submit" form="remove" class="align-right"><i class="fas fa-user-plus"></i> Deseguir</button>
+                        <button type="submit" form="remove" class="align-right"><i class="fas fa-user-times"></i> Deixar de seguir</button>
                         @endif
                     @endif
 
