@@ -680,3 +680,6 @@ body .content .form-container .close-modal {
   }
 }
 
+.invisible {
+  visibility: hidden;
+}

@@ -15,8 +15,22 @@
                         </div>
                     </div>
                     @if(!$personal)
-
-                    <button class="align-right"><i class="fas fa-user-plus"></i> Adicionar</button>
+                        @if(!$follower)
+                        <form method="POST" id="add" class="invisible" action="/account/{{ $user->name }}">
+                            @csrf
+                            <input name="acao" value="seguir"> 
+                            <input name="usuario" value="{{ $user->name }}"> 
+                        </form>
+                        <button type="submit" form="add" class="align-right"><i class="fas fa-user-plus"></i> Seguir</button>
+                        @endif
+                        @if($follower)
+                        <form method="POST" id="remove" class="invisible" action="/account/{{ $user->name }}">
+                            @csrf
+                            <input name="acao" value="deseguir"> 
+                            <input name="usuario" value="{{ $user->name }}"> 
+                        </form>
+                        <button type="submit" form="remove" class="align-right"><i class="fas fa-user-plus"></i> Deseguir</button>
+                        @endif
                     @endif
 
                 </div>

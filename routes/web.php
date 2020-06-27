@@ -18,9 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/my-account', 'ProfileController@index')->middleware('auth');
-Route::get('/account/{id}', 'ProfileController@show');
+Route::get('/account/{name}', 'ProfileController@show');
+Route::post('/account/{name}', 'ProfileController@follower')->middleware('auth');
 
-Route::get('/albums', 'AlbumController@index')->middleware('auth');
+Route::get('/albums', 'AlbumController@index')->middleware('auth'); 
 Route::get('/album/{id}', 'AlbumController@show');
 
 Route::post('/albums', 'AlbumController@createAlbum')->middleware('auth');
