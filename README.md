@@ -1,23 +1,18 @@
 # EXPSR
 
 <!--- Exemplos de badges. Acesse https://shields.io para outras opções. Você pode querer incluir informações de dependencias, build, testes, licença, etc. --->
-![GitHub repo size](https://img.shields.io/github/repo-size/hsborges/progweb-template)
-![GitHub contributors](https://img.shields.io/github/contributors/hsborges/progweb-template)
+![GitHub repo size](https://img.shields.io/github/repo-size/JoseGabrielNF/EXPSR?style=flat-square)
+![GitHub contributors](https://img.shields.io/github/contributors/JoseGabrielNF/EXPSR?style=flat-square)
 
 EXPSR é uma plataforma de armazenamento e compartilhamento de imagens com objetivo de expôr sua vida e trabalho por meio da fotografia.
-
-<div align="center">
- <img src="publico/EXPSR_cloud_logo.png" height="300" />
-</div>
 
 ## Pré-requisitos
 
 Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 <!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
-* Você deve possuir a última versão do `<linguagem/dependencia/etc>` instalado.
-* Você deve possuir uma máquina `<Windows/Linux>`.
-* Você deve ter instalado `git,php,mysql,composer`.
-* Você deve ler o `<terms>` dos termos de uso.
+* Você deve possuir a última versão do `PHP, MySQL, XAMPP e Composer` instalados.
+* Você pode possuir uma máquina `Windows ou Linux`.
+* Você deve ter instalado `Git ,PHP, MySQL e Composer`.
 
 ## Como executar
 * Execute os comandos pelo cmd
@@ -25,6 +20,7 @@ Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 * `cd EXPSR`
 * `composer install`
 * `copy .env.example .env`
+* Inicie o MySQL pelo Xampp e crie um banco de dados
 * Abra o arquivo .env criado e substitua o atributo "DB_DATABASE" pelo nome do seu banco de dados criado por um servidor 
 * Execute os comandos
 * `php artisan key:generate`
@@ -43,11 +39,16 @@ Para usar EXPSR, siga os seguintes passos (exemplos):
   * Criar um novo album de imagens:
     * Ao criar um novo album podemos adicionar um titulo e selecionar a visibilidade desse album, podendo ser "Público" ou "Privado".
   * Adicionar uma nova imagem:
-    * Quando entramos em um album, já criado anteriormente, podemos adicionar novas imagens que irão compor esse album. Para isso devemos fazer o upload da imagem desejada e adicionar a descrição da imagem e sua visibilidade, podendo ser "Público" ou "Privado".
-    * Por enquanto, ao adicionar uma imagem temos que atualizar a página ou adicionar outra imagem para que a mesma seja exibida.
+    * Quando entramos em um album, já criado anteriormente, podemos adicionar novas imagens que irão compor esse album. Para isso devemos fazer o upload da imagem desejada e adicionar uma descrição.
   * Visualizar as miniaturas das imagens de um album.
-
-*Descreva as principais atividades, e/ou fluxos, que são possíveis de serem realizadas na aplicação.*
+* Ao visualizar uma imagem:
+    * É visível o autor da imagem e sua foto de perfil.
+    * É possível curtir ou descurtir uma imagem, afetando o contador de curtidas.
+    * É visível a descrição da imagem feita pelo autor no ato de upload.
+    * Exluir a imagem se for o dono dela.
+* Ao acessar um perfil:
+    * É apresentado os álbuns, seguidores e quem segue este perfil.
+    * Acionar o botão para seguir o perfil.
 
 ## Contribuidores
 

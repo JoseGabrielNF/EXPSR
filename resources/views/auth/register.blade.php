@@ -46,7 +46,7 @@
                     <input type="password" id="password-confirm" name="password_confirmation" autocomplete="new-password">
                     
                     <button type="submit">Criar conta</button>
-                    <span class="terms">Ao criar uma conta você concorda com nossos <a href="#">termos e condições</a>.</span>
+                    <span class="terms">Ao criar uma conta você concorda com nossos <a href="/terms.php">termos e condições</a>.</span>
                 </form>
             </div>
         </div>
