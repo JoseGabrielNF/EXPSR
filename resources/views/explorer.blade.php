@@ -2,16 +2,21 @@
 @section('title', 'Explorar')
 @section('content')
 
-
-
 <div class="albums">
+    <div class="content">
+        <div class="images">
+            @if(count($images) > 0)
 
-<div class="content">
-           <div class="images">
             @foreach($images as $image)
-                     <a class="image" href="{{'/image/'.$image->id}}"  style="background-image: url('{{ $image->image_path }}');"></a>
+            <a class="image" href="{{'/image/'.$image->id}}"  style="background-image: url('{{ $image->image_path }}');"></a>
             @endforeach
-            </div>
-            </div>
+
+            @else
+
+            <div class="error-message"><i class="fas fa-exclamation-circle"></i>{{ $personal ? 'Ninguém publicou um álbum!' : 'Não há imagens a serem mostradas!' }}</div>
+
+            @endif
+    </div>
+</div>
 
 @endsection
