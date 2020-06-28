@@ -30,7 +30,7 @@ class ProfileController extends Controller
         }
 
         $user = User::where('username', $username)->firstOrFail();
-        $albums = Album::where('user_id', $user->id)->take(4)->get();
+        $albums = Album::where('user_id', $user->id)->where('public', 1)->take(4)->get();
         $seguidores = Followers::join('users', 'users.id', '=', 'followers.follower')->where('user_id', $user->id)->get();
         $follower = Followers::where('user_id', $user->id)->where('follower', Auth::user()->id)->first();
 
