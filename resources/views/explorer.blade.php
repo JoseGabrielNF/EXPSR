@@ -3,17 +3,15 @@
 @section('content')
 
 
+
 <div class="albums">
 
-@foreach($albums as $album)
-
-    <div class="album" style="background-image: url('');">
-        <div class="album-header">
-            <h3 class="name">{{ $album->name }}</h3>
-        </div>
-    </div>
-@endforeach
-
-</div>
+<div class="content">
+           <div class="images">
+            @foreach($images as $image)
+                     <a class="image" href="{{'/image/'.$image->id}}"  style="background-image: url('{{ $image->image_path }}');"></a>
+            @endforeach
+            </div>
+            </div>
 
 @endsection
