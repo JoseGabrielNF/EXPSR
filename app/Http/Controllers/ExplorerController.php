@@ -14,10 +14,10 @@ class ExplorerController extends Controller
 
     $user = Auth::user();
 
-    $images = Image::select('users.name', 'users.username', 'images.id', 'images.image_path' )
+    $images = Image::select('images.image_path','albums.public' )
     ->join('albums', 'albums.id', 'images.album_id')
-    ->join('users', 'users.id', 'albums.user_id')
-    ->where('albums.public',1)->where('album_id','!=', $user->id)->get();
+    ->where('albums.public',0)->where('album_id','!=', $user->id)->get();
+    
 
      return view('explorer', [ 'images'=>$images, 'personal' => true]);
     
