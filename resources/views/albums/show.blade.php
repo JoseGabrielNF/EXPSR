@@ -1,6 +1,10 @@
 @extends('layouts.app')
-
 @section('title', $album->name)
+@if(count($errors) > 0)
+<script>
+    window.onload = function() { toggleModal() };
+</script>
+@endif
 @section('content')
         <div class="content">
             <div class="container">
@@ -40,14 +44,21 @@
                     <form action="/add-image" method="post" enctype="multipart/form-data">
                         @csrf
                         
+                        <input type="hidden" name="album_id" value="{{ $album->id }}">
+
                         <div class="row">
                             <label for="image">Selecione a imagem</label>
+                            @error('image')
+                            <span class="error">{{ $message }}</span>
+                            @enderror
                         </div>
                         <input type="file" name="image">
-                        <input type="hidden" name="album_id" value="{{ $album->id }}">
                         
                         <div class="row">
                             <label for="description">Descrição da imagem</label>
+                            @error('description')
+                            <span class="error">{{ $message }}</span>
+                            @enderror
                         </div>
                         <textarea name="description" maxlength="250"></textarea>
 

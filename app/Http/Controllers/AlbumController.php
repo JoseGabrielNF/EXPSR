@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Album;
 use App\Image;
 use Auth;
@@ -17,16 +18,42 @@ class AlbumController extends Controller
     }
 
     public function show($id) {
+
         $album = Album::where('id', $id)->firstOrFail();
+
+        /* verifica se o álbum é privado e se quem quer acessar é o dono dele */
+        if ($album->public == false && (Auth::check() == false || $album->user_id != Auth::user()->id)) {
+            return abort(401);
+        }
+
         $images = Image::where('album_id', $album->id)->get();
         return view('albums.show', ['album' => $album, 'images' => $images]);
     }
 
-    public function create_album() {
-        $id_user = Auth::user()->id;
-        $name =  request('name');
+    public function create_album(Request $request) {
 
-        if (request('visibility') == 'public'){
+        $rules = [
+            'name' => ['required', 'string', 'min:3', 'max:16'],
+            'visibility' => ['required', 'in:public,private']
+        ];
+
+        $messages = [
+            'required' => 'Esse campo é obrigatório!',
+            'name.min' => 'Nome muito curto!',
+            'name.max' => 'Nome muito longo!',
+            'visibility.in' => 'Opção inválida!'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect('/albums')->withErrors($validator)->withInput();
+        }
+
+        $id_user = Auth::user()->id;
+        $name =  $request->input('name');
+
+        if ($request->input('visibility') == 'public'){
             $visibilidade = 1;
         } else {
             $visibilidade = 0;
@@ -45,10 +72,26 @@ class AlbumController extends Controller
     }
 
     public function add_image(Request $request){
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-  
+
+        $rules = [
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'description' => ['required', 'string', 'min:3', 'max:250']
+        ];
+
+        $messages = [
+            'required' => 'Esse campo é obrigatório!',
+            'image.mimes' => 'Tipo não permitido!',
+            'image.max' => 'Imagem muito grande!',
+            'description.min' => 'Descrição muito curta!',
+            'description.max' => 'Descrição muito longa!'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect('/album/' . $request->input('album_id'))->withErrors($validator)->withInput();
+        }
+        
         $id_user = Auth::user()->id;
         $imageName = time().'.'.$request->image->extension();  
         $request->image->move(public_path('images'), $imageName);
@@ -56,7 +99,7 @@ class AlbumController extends Controller
         $image = new Image;
 
         $image->user_id = $id_user;
-        $image->album_id = request('album_id');
+        $image->album_id = $request->input('album_id');
         $image->image_path = '/images/'.$imageName;
         $image->description = "".request('description');
 
