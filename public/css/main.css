@@ -134,6 +134,7 @@ body .content.bg {
 }
 
 body .content .header {
+  height: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -1,10 +1,5 @@
 @extends('layouts.app')
 @section('title', $album->name)
-@if(count($errors) > 0)
-<script>
-    window.onload = function() { toggleModal() };
-</script>
-@endif
 @section('content')
         <div class="content">
             <div class="container">
@@ -70,4 +65,9 @@
                 </div>
             </div>
         </div>
+        @if(count($errors) > 0)
+        <script>
+            window.onload = function() { toggleModal() };
+        </script>
+        @endif
 @endsection
