@@ -1,15 +1,17 @@
 @extends('layouts.app')
-@section('title', $personal ? 'Meu perfil' : 'Perfil de ' . $user->name)
+@section('title', $personal ? 'Meu perfil' : 'Perfil de ' . $user->username)
 @section('content')
         <div class="content">
             <div class="container">
-                <div class="profile-cover"></div>
+                <div class="profile-cover" onclick="toggleModal()">
+                    <!-- <img src="{{ $user->profile_banner_path }}" onclick="toggleModal()"> -->
+                </div>
                 <div class="profile-info">
                     <div class="profile-picture">
-                        <!--<img src="#" alt="{{ $user->name }}">-->
+                        <img src="{{ $user->profile_picture_path }}" onclick="toggleModal()" alt="{{ $user->username }}">
                     </div>
                     <div class="info">
-                        <h1 class="user-name">{{ $user->name }}</h1>
+                        <h1 class="user-name">{{ $user->username }}</h1>
                         <div class="user-description">
                             Seja bem-vindo ao meu perfil!
                         </div>
@@ -135,5 +137,40 @@
                 @endif
 
             </div>
+            <div class="modal-background" id="modal-background">
+                <div class="form-container">
+                    <h2 class="form-title">Alterar imagem de Perfil/Capa</h2>
+                    <form action="/edit-profile-images" method="post" enctype="multipart/form-data">
+                        @csrf
+                        
+                        <div class="row">
+                            <label for="image">Selecione a imagem</label>
+                            @error('image')
+                            <span class="error">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <input type="file" name="image">
+
+                        <div class="row">
+                            <label for="local">Foto de Perfil ou de Capa</label>
+                            @error('local')
+                            <span class="error">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <select name="local">
+                            <option value="profile">Perfil</option>
+                            <option value="banner">Capa</option>
+                        </select>
+                        
+                        <button type="submit">Adicionar</button>
+                    </form>
+                    <button class="close-modal" onclick="toggleModal()"><i class="fas fa-times"></i></button>
+                </div>
+            </div>   
         </div>
+        @if(count($errors) > 0)
+        <script>
+            window.onload = function() { toggleModal() };
+        </script>
+        @endif
 @endsection
