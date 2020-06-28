@@ -20,7 +20,11 @@
                     $capa = App\Image::select('image_path')->where('album_id', $album->id)->first();
                 @endphp
 
+                    @if ($capa == null)
+                    <a class="album" href="album/<?= $album->id?>" style="background-image: url('');">
+                    @else
                     <a class="album" href="album/<?= $album->id?>" style="background-image: url('{{ $capa->image_path }}');">
+                    @endif
                         <div class="album-header">
                             <h3 class="name">{{ $album->name }}</h3>
                         </div>
