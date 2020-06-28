@@ -70,25 +70,20 @@
                 </div> 
                 @else
 
-                    <div class="no-results">
-                        <div><h4 class="title">{{ $personal ? 'Você não possui álbuns!' : 'Não há álbuns a serem exibidos!' }}</h4></div>
-                    </div>
+                <div class="no-results">
+                    <div><h4 class="title">{{ $personal ? 'Você não possui álbuns!' : 'Não há álbuns a serem exibidos!' }}</h4></div>
+                </div>
                 @endif
 
                 <div class="profile-section">
                     <h2 class="section-title">Seguidores</h2>
-                    <a class="align-right" href="#">Ver todos</a>
+                    <a class="align-right" href="{{ $personal ? route('followers.index_followers') : route('followers.show_followers', $user->username) }}">Ver todos</a>
                 </div>
                 @if(count($seguidores) > 0)
                 
                 <div class="users">
                 @foreach($seguidores as $seguidor)
-
-                @if (Auth::user()->id == $seguidor->id)
-                    <a class="user" href="/my-account">
-                    @else
-                    <a class="user" href="/account/{{ $seguidor->username }}"> 
-                    @endif
+                    <a class="user" href="{{ Auth::check() && Auth::user()->id == $seguidor->id ? route('account.index') : route('account.show', $seguidor->username) }}">
                         <div class="user-content">
                             <div class="cover" style="background-image: url('/img/background.jpg')"></div>
                             <div class="info">
@@ -104,9 +99,39 @@
                 </div>
                 @else
 
-                    <div class="no-results">
-                        <div><h4 class="title">{{ $personal ? 'Você não possui seguidores!' : 'Essa conta não possui seguidores!' }}</h4></div>
-                    </div>
+                <div class="no-results">
+                    <div><h4 class="title">{{ $personal ? 'Você não possui seguidores!' : 'Essa conta não possui seguidores!' }}</h4></div>
+                </div>
+                @endif
+
+                <div class="profile-section">
+                    <h2 class="section-title">Seguindo</h2>
+                    <a class="align-right" href="{{ $personal ? route('followers.index_following') : route('followers.show_following', $user->username) }}">Ver todos</a>
+                </div>
+                @if(count($seguindo) > 0)
+                
+                <div class="users">
+                @foreach($seguindo as $seguido)
+
+                    <a class="user" href="{{ Auth::check() && Auth::user()->id == $seguido->id ? route('account.index') : route('account.show', $seguido->username) }}">
+                        <div class="user-content">
+                            <div class="cover" style="background-image: url('/img/background.jpg')"></div>
+                            <div class="info">
+                                <div class="profile-picture">
+                                    <img src="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg" alt="{{ $seguido->name }}">
+                                </div>
+                                <h3 class="user-name">{{ $seguido->name }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach    
+
+                </div>
+                @else
+
+                <div class="no-results">
+                    <div><h4 class="title">{{ $personal ? 'Você não segue ninguém!' : 'Essa conta não segue ninguém!' }}</h4></div>
+                </div>
                 @endif
 
             </div>

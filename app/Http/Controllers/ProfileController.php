@@ -16,9 +16,10 @@ class ProfileController extends Controller
 
         $user = Auth::user();
         $albums = Album::where('user_id', $user->id)->take(4)->get();
-        $seguidores = Followers::join('users', 'users.id', '=', 'followers.follower')->where('user_id', $user->id)->get();
+        $seguidores = Followers::join('users', 'users.id', '=', 'followers.follower')->where('user_id', $user->id)->take(4)->get();
+        $seguindo = Followers::join('users', 'users.id', '=', 'followers.user_id')->where('follower', $user->id)->take(4)->get();
 
-        return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => true, 'seguidores' => $seguidores]);
+        return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => true, 'seguidores' => $seguidores, 'seguindo' => $seguindo]);
     }
 
     /* controlador do perfil de um usuário específico */
@@ -31,7 +32,8 @@ class ProfileController extends Controller
 
         $user = User::where('username', $username)->firstOrFail();
         $albums = Album::where('user_id', $user->id)->where('public', 1)->take(4)->get();
-        $seguidores = Followers::join('users', 'users.id', '=', 'followers.follower')->where('user_id', $user->id)->get();
+        $seguidores = Followers::join('users', 'users.id', '=', 'followers.follower')->where('user_id', $user->id)->take(4)->get();
+        $seguindo = Followers::join('users', 'users.id', '=', 'followers.user_id')->where('follower', $user->id)->take(4)->get();
         $follower = Followers::where('user_id', $user->id)->where('follower', Auth::user()->id)->first();
 
         if ($follower == null){
@@ -40,7 +42,7 @@ class ProfileController extends Controller
             $follower = true;
         }
 
-        return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => false, 'seguidores' => $seguidores, 'follower' => $follower]);
+        return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => false, 'seguidores' => $seguidores, 'seguindo' => $seguindo, 'follower' => $follower]);
     }
 
     public function album_perfil($username, $album_id) {
