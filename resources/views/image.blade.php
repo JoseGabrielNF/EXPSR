@@ -8,8 +8,20 @@
                 </div>
                 <div class="image-info">
                     <div class="info-header">
-                        <div class="views">105.578 visualizações</div>
-                        <button class="like-button"><i class="far fa-heart"></i> Curtir</button>
+                        <div class="views">{{ $likes }} curtidas</div>
+                        
+                        <form method="POST" id="curtida" style="display: none;" action="/like">
+                            @csrf
+                            @if ($curtiu == 'Descurtir') 
+                            <input name="acao" value="descurtir"> 
+                            @else
+                            <input name="acao" value="curtir">
+                            @endif
+                            <input name="usuario" value="{{ Auth::user()->username }}"> 
+                            <input name="id_image" value="{{ $image->id }}">
+                        </form>
+                        <button type="submit" form="curtida" class="like-button"><i class="far fa-heart"></i> {{ $curtiu }}</button>
+
                     </div>
                     <div class="user">
                         <div class="profile-picture">
@@ -22,7 +34,7 @@
                         @endif
                     </div>
                     <p class="description">
-                        {{ $image->description }}
+                        {{ $image->description }} 
                     </p>
                 </div>
             </div>

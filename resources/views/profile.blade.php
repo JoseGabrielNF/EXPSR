@@ -67,7 +67,7 @@
                     </a>
                 @endforeach
 
-                </div>
+                </div> 
                 @else
 
                     <div class="no-results">
