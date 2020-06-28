@@ -45,8 +45,22 @@
 
                 <div class="albums">
                 @foreach($albums as $album)
-
-                    <a class="album" href="#" style="background-image: url('');">
+                @php
+                    $capa = App\Image::select('image_path')->where('album_id', $album->id)->first();
+                @endphp
+                @if ($capa == null)
+                    @if ($personal)
+                    <a class="album" href="album/{{$album->id}}" style="background-image: url('');">
+                    @else
+                    <a class="album" href="{{$user->username}}/album/{{$album->id}}" style="background-image: url('');">
+                    @endif
+                @else
+                    @if ($personal)
+                    <a class="album" href="album/{{$album->id}}" style="background-image: url('{{ $capa->image_path }}');">    
+                    @else
+                    <a class="album" href="{{$user->username}}/album/{{$album->id}}" style="background-image: url('{{ $capa->image_path }}');">
+                    @endif
+                @endif
                         <div class="album-header">
                             <h3 class="name">{{ $album->name }}</h3>
                         </div>
@@ -73,7 +87,7 @@
                 @if (Auth::user()->id == $seguidor->id)
                     <a class="user" href="/my-account">
                     @else
-                    <a class="user" href="/account/{{ $seguidor->username }}">
+                    <a class="user" href="/account/{{ $seguidor->username }}"> 
                     @endif
                         <div class="user-content">
                             <div class="cover" style="background-image: url('/img/background.jpg')"></div>

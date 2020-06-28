@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Album;
+use App\Image;
 use App\Followers;
-use Auth;
+use Auth; 
 
-class ProfileController extends Controller
+class ProfileController extends Controller 
 {
     /* controlador do perfil do usuário */
     public function index() {
@@ -16,7 +17,6 @@ class ProfileController extends Controller
         $user = Auth::user();
         $albums = Album::where('user_id', $user->id)->take(4)->get();
         $seguidores = Followers::join('users', 'users.id', '=', 'followers.follower')->where('user_id', $user->id)->get();
-
 
         return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => true, 'seguidores' => $seguidores]);
     }
@@ -41,6 +41,12 @@ class ProfileController extends Controller
         }
 
         return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => false, 'seguidores' => $seguidores, 'follower' => $follower]);
+    }
+
+    public function album_perfil($username, $album_id) {
+        $album = Album::where('id', $album_id)->firstOrFail();
+        $images = Image::where('album_id', $album->id)->get();
+        return view('albums.show', ['album' => $album, 'images' => $images, 'personal' => false]);
     }
 
     public function follow () {

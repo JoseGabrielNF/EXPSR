@@ -19,10 +19,10 @@ class AlbumController extends Controller
     public function show($id) {
         $album = Album::where('id', $id)->firstOrFail();
         $images = Image::where('album_id', $album->id)->get();
-        return view('albums.show', ['album' => $album, 'images' => $images]);
+        return view('albums.show', ['album' => $album, 'images' => $images, 'personal' => true]);
     }
 
-    public function create_album() {
+    public function create_album() { 
         $id_user = Auth::user()->id;
         $name =  request('name');
 
