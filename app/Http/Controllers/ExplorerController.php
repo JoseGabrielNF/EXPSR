@@ -14,7 +14,7 @@ class ExplorerController extends Controller
 
     $user = Auth::user();
 
-    $images = Image::select('images.image_path','albums.public' )
+    $images = Image::select('images.image_path','albums.public','images.id' )
     ->join('albums', 'albums.id', 'images.album_id')
     ->where('albums.public',1)->where('album_id','!=', $user->id)->get();
     
