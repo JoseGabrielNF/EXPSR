@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@php
-    //echo $album;
-@endphp
-
 @section('title', $album->name)
 @section('content')
         <div class="content">

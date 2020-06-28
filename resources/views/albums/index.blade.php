@@ -16,8 +16,11 @@
                 <div class="albums">
 
                 @foreach($albums as $album)
+                @php
+                    $capa = App\Image::select('image_path')->where('album_id', $album->id)->first();
+                @endphp
 
-                    <a class="album" href="album/<?= $album->id?>" style="background-image: url('');">
+                    <a class="album" href="album/<?= $album->id?>" style="background-image: url('{{ $capa->image_path }}');">
                         <div class="album-header">
                             <h3 class="name">{{ $album->name }}</h3>
                         </div>
