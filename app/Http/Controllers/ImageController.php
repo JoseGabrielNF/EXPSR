@@ -20,13 +20,15 @@ class ImageController extends Controller
 
         $likes = Likes::where('image_id', $image->id)->count();
 
+        $by_user = User::where('username', $image->username)->firstOrFail();
+
         if ($like_user == "") {
             $curtiu = 'Curtir';
         } else {
             $curtiu = 'Descurtir';
         }
 
-        return view('image', ['image' => $image, 'curtiu' => $curtiu, 'likes' => $likes]); 
+        return view('image', ['by_user' => $by_user, 'image' => $image, 'curtiu' => $curtiu, 'likes' => $likes]); 
     }
 
     public function curtida () {

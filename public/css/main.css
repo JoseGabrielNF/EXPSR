@@ -253,7 +253,6 @@ body .content .profile-cover {
 
 body .content .profile-info {
   width: 100%;
-  height: 100px;
   margin-bottom: 40px;
   display: flex;
   flex-direction: row;
@@ -263,12 +262,13 @@ body .content .profile-info {
 body .content .profile-info .profile-picture {
   width: 200px;
   height: 200px;
+  overflow: hidden;
   background-color: #f2f2f2;
   margin: 0 10px;
   border-radius: 3px;
-  border: 5px solid #fff;
+  border: 5px solid #c7c7c7;
   position: absolute;
-  bottom: 0;
+  top: -100px;
 }
 
 body .content .profile-info .profile-picture img {
@@ -722,6 +722,26 @@ body .content .form-container .close-modal {
   body .content .no-results {
     flex: 0 1 calc(50% - 5px);
     padding-top: calc(50% - 5px);
+  }
+
+  body .content .profile-info .profile-picture {
+    left: calc(50% - 110px);
+  }
+
+  body .content .profile-info {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  body .content .profile-info .info {
+    width: 100%;
+    margin-top: 100px;
+    margin-left: 0;
+    align-items: center;
+  }
+
+  body .content .profile-info button {
+    margin-left: 0;
   }
 }
 
