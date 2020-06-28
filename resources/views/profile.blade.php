@@ -85,10 +85,10 @@
                 @foreach($seguidores as $seguidor)
                     <a class="user" href="{{ Auth::check() && Auth::user()->id == $seguidor->id ? route('account.index') : route('account.show', $seguidor->username) }}">
                         <div class="user-content">
-                            <div class="cover" style="background-image: url('/img/background.jpg')"></div>
+                            <div class="cover" style="background-image: url('{{ $seguidor->profile_banner_path }}')"></div>
                             <div class="info">
                                 <div class="profile-picture">
-                                    <img src="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg" alt="{{ $seguidor->name }}">
+                                    <img src="{{ $seguidor->profile_picture_path }}" alt="{{ $seguidor->name }}">
                                 </div>
                                 <h3 class="user-name">{{ $seguidor->name }}</h3>
                             </div>
@@ -115,10 +115,10 @@
 
                     <a class="user" href="{{ Auth::check() && Auth::user()->id == $seguido->id ? route('account.index') : route('account.show', $seguido->username) }}">
                         <div class="user-content">
-                            <div class="cover" style="background-image: url('/img/background.jpg')"></div>
+                            <div class="cover" style="background-image: url('{{ $seguido->profile_banner_path }}')"></div>
                             <div class="info">
                                 <div class="profile-picture">
-                                    <img src="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg" alt="{{ $seguido->name }}">
+                                    <img src="{{ $seguido->profile_picture_path }}" alt="{{ $seguido->name }}">
                                 </div>
                                 <h3 class="user-name">{{ $seguido->name }}</h3>
                             </div>

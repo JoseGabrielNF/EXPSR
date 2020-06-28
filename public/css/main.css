@@ -429,6 +429,7 @@ body .content .users .user .user-content .info {
 body .content .users .user .user-content .info .profile-picture {
   width: 50%;
   height: 100%;
+  overflow: hidden;
   background-color: #f2f2f2;
   border: 5px solid #fff;
   border-radius: 3px;
@@ -508,6 +509,10 @@ body .content .image-info .info-header {
   align-items: center;
 }
 
+body .content .image-info .info-header .likes {
+  font-size: 14px;
+}
+
 body .content .image-info .info-header button {
   color: #e84e47;
   font-size: 13px;
@@ -551,12 +556,13 @@ body .content .image-info .user {
 body .content .image-info .user .profile-picture {
   width: 40px;
   height: 40px;
+  overflow: hidden;
   margin-right: 10px;
 }
 
 body .content .image-info .user .profile-picture img {
-  height: 100%;
-  border-radius: 50%;
+  width: 100%;
+  border-radius: 3px;
 }
 
 body .content .image-info .user .username {

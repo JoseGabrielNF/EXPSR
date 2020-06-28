@@ -8,7 +8,7 @@
                 </div>
                 <div class="image-info">
                     <div class="info-header">
-                        <div class="views">{{ $likes }} curtidas</div>
+                        <div class="likes">{{ $likes }} curtidas</div>
                         
                         <button><i class="far fa-trash-alt"></i> Apagar imagem</button>
                         <form method="POST" id="curtida" style="display: none;" action="/like">
