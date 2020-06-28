@@ -11,7 +11,8 @@
                         <span class="visibility private">Privado</span>
                     @endif
                     @if($personal)
-                    <button class="align-right" onclick="toggleModal()"><i class="far fa-image"></i> Adicionar</button>
+                    <button class="st"><i class="far fa-trash-alt"></i></button>
+                    <button onclick="toggleModal()"><i class="far fa-image"></i> Adicionar</button>
                     @endif
                 </div>
             @if(count($images) > 0)
