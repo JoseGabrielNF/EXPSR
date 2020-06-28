@@ -51,4 +51,12 @@ class ImageController extends Controller
 
         return redirect('/image/' .$imagem);        
     }
+
+    public function delete() {
+        $id = request('image_id');
+        $album = Image::select('album_id')->where('id', $id)->first();
+        $image = Image::where('id', $id)->delete();
+        
+        return redirect('/album/'.$album->album_id);
+    } 
 }
