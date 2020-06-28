@@ -166,6 +166,7 @@ body {
             }
 
             button {
+                height: 35px;
                 color: #fff;
                 font-size: $font-size;
                 font-weight: bold;
@@ -174,6 +175,7 @@ body {
                 padding: 10px 15px;
                 border-radius: 3px;
                 border: none;
+                margin-right: 3px;
                 outline: none;
                 transition: 0.2s;
                 cursor: pointer;
@@ -181,8 +183,16 @@ body {
                 flex-direction: row;
                 align-items: center;
 
-                i {
+                &:not(.st) i {
                     margin-right: 5px;
+                }
+
+                &:first-of-type {
+                    margin-left: auto;
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
                 }
 
                 &:hover {
@@ -505,19 +515,27 @@ body {
                     
                 }
 
-                .like-button {
+                button {
                     color: $primary;
                     font-size: $font-size;
                     text-transform: uppercase;
                     padding: 5px 10px;
                     border: 1px solid $primary;
                     border-radius: 3px;
-                    margin-left: auto;
+                    margin-right: 3px;
                     cursor: pointer;
                     transition: 0.2s;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
+
+                    &:first-of-type {
+                        margin-left: auto;
+                    }
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
 
                     &:hover {
                         color: #fff;
