@@ -37,6 +37,7 @@ Route::get('/account/{username}/followers', 'FollowersController@show_followers'
 Route::get('/account/{username}/following', 'FollowersController@show_following')->name('followers.show_following');
 
 Route::post('/follow', 'ProfileController@follow')->middleware('auth');
+Route::post('/edit-profile-images', 'ProfileController@edit_profile_images')->middleware('auth');
 Route::post('/create-album', 'AlbumController@create_album')->middleware('auth');
 Route::post('/add-image', 'AlbumController@add_image')->middleware('auth');
 Route::post('/like', 'ImageController@curtida')->middleware('auth');

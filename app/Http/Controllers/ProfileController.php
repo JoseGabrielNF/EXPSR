@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\Album;
 use App\Image;
@@ -84,6 +85,40 @@ class ProfileController extends Controller
         }
 
         return redirect('/account/' . $username);
+    }
+    
+    public function edit_profile_images(Request $request){
+        $rules = [
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'local' => ['required', 'in:profile,banner']
+        ];
+
+        $messages = [
+            'required' => 'Esse campo é obrigatório!',
+            'image.mimes' => 'Tipo não permitido!',
+            'image.max' => 'Imagem muito grande!',
+            'local.in' => 'Opção inválida!'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect('/my-account')->withErrors($validator)->withInput();
+        }
+        
+        $id_user = Auth::user()->id;
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
+
+        if ($request->input('local') == 'banner'){
+            User::where('id', $id_user)
+                ->update(['profile_banner_path' => '/images/'.$imageName]);
+        } else {
+            User::where('id', $id_user)
+                ->update(['profile_picture_path' => '/images/'.$imageName]);
+        }        
+
+        return back();
     }
 
 }
