@@ -27,7 +27,7 @@ class AlbumController extends Controller
         }
 
         $images = Image::where('album_id', $album->id)->get();
-        return view('albums.show', ['album' => $album, 'images' => $images]);
+        return view('albums.show', ['album' => $album, 'images' => $images, 'personal' => true]);
     }
 
     public function create_album(Request $request) {

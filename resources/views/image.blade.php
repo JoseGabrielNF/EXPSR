@@ -15,7 +15,11 @@
                         <div class="profile-picture">
                             <img src="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg" alt="">
                         </div>
-                        <a href="#"><div class="username">username</div></a>
+                        @if (Auth::user()->username == $image->username)
+                        <a href="/my-account"><div class="username">{{$image->username}}</div></a>
+                        @else
+                        <a href="/account/{{ $image->username }}"><div class="username">{{$image->username}}</div></a>
+                        @endif
                     </div>
                     <p class="description">
                         {{ $image->description }}
