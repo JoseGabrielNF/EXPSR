@@ -1,16 +1,14 @@
 @extends('layouts.app')
-@section('title', 'Meus álbuns')
-@if(count($errors) > 0)
-<script>
-    window.onload = function() { toggleModal() };
-</script>
-@endif
+@section('title', $personal ? 'Meus álbuns' : 'Álbuns de ' . $user->name )
 @section('content')
         <div class="content">
             <div class="container">
                 <div class="header">
-                    <h2 class="page-title">Meus álbuns</h2>
+                    <h2 class="page-title">{{ $personal ? 'Meus álbuns' : 'Álbuns de ' . $user->name }}</h2>
+                    @if($personal)
+
                     <button class="align-right" onclick="toggleModal()"><i class="far fa-images"></i> Criar</button>
+                    @endif
                 </div>
                 
                 @if(count($albums) > 0)
@@ -49,7 +47,7 @@
                 
                 @else
 
-                <div class="error-message"><i class="fas fa-exclamation-circle"></i>Desculpe, você não possui nenhum álbum!</div>
+                <div class="error-message"><i class="fas fa-exclamation-circle"></i>{{ $personal ? 'Você não possui nenhum álbum!' : 'Não há álbuns a serem mostrados!' }}</div>
                 
                 @endif
 
@@ -85,4 +83,9 @@
                 </div>
             </div>
         </div>
+        @if(count($errors) > 0)
+        <script>
+            window.onload = function() { toggleModal() };
+        </script>
+        @endif
 @endsection

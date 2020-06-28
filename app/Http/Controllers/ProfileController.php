@@ -49,6 +49,19 @@ class ProfileController extends Controller
         return view('albums.show', ['album' => $album, 'images' => $images, 'personal' => false]);
     }
 
+    public function list_albums($username) {
+
+        /* redireciona o usuário para /albums caso ele tente acessar seus albuns através do nome de usuário */
+        if (Auth::check() && $username == Auth::user()->username) {
+            return redirect('/albums');
+        }
+
+        $user = User::where('username', $username)->firstOrFail();
+        $albums = Album::where('user_id', $user->id)->where('public', 1)->get();
+
+        return view('albums.index', ['user' => $user, 'albums' => $albums, 'personal' => false]);
+    }
+
     public function follow () {
         $username = request('usuario');
         $follower = Auth::user()->id;
