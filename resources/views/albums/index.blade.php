@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title', $personal ? 'Meus álbuns' : 'Álbuns de ' . $user->username )
+@section('title', $personal ? 'Meus álbuns' : 'Álbuns de ' . $user->name )
 @section('content')
         <div class="content">
             <div class="container">
                 <div class="header">
-                    <h2 class="page-title">{{ $personal ? 'Meus álbuns' : 'Álbuns de ' . $user->username }}</h2>
+                    <h2 class="page-title">{{ $personal ? 'Meus álbuns' : 'Álbuns de ' . $user->name }}</h2>
                     @if($personal)
 
                     <button class="align-right" onclick="toggleModal()"><i class="far fa-images"></i> Criar</button>

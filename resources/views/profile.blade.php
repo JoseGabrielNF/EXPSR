@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', $personal ? 'Meu perfil' : 'Perfil de ' . $user->username)
+@section('title', $personal ? 'Meu perfil' : 'Perfil de ' . $user->name)
 @section('content')
         <div class="content">
             <div class="container">
@@ -11,7 +11,7 @@
                         <img src="{{ $user->profile_picture_path }}" onclick="toggleModal()" alt="{{ $user->username }}">
                     </div>
                     <div class="info">
-                        <h1 class="user-name">{{ $user->username }}</h1>
+                        <h1 class="user-name">{{ $user->name }}</h1>
                         <div class="user-description">
                             Seja bem-vindo ao meu perfil!
                         </div>
