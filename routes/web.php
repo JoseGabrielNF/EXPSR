@@ -31,5 +31,3 @@ Route::get('/image/{id}', 'ImageController@show');
 Route::post('/follow', 'ProfileController@follow')->middleware('auth');
 Route::post('/create-album', 'AlbumController@create_album')->middleware('auth');
 Route::post('/add-image', 'AlbumController@add_image')->middleware('auth');
-
-
