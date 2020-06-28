@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('title', 'Meus álbuns')
-@php
-   // echo Auth::user()->id;
-@endphp
+@if(count($errors) > 0)
+<script>
+    window.onload = function() { toggleModal() };
+</script>
+@endif
 @section('content')
         <div class="content">
             <div class="container">
@@ -60,11 +62,17 @@
 
                         <div class="row">
                             <label for="name">Nome do álbum</label>
+                            @error('name')
+                            <span class="error">{{ $message }}</span>
+                            @enderror
                         </div>
                         <input type="text" name="name">
 
                         <div class="row">
                             <label for="visibility">Visibilidade</label>
+                            @error('visibility')
+                            <span class="error">{{ $message }}</span>
+                            @enderror
                         </div>
                         <select name="visibility">
                             <option value="public">Público</option>
