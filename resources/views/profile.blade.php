@@ -3,9 +3,7 @@
 @section('content')
         <div class="content">
             <div class="container">
-                <div class="profile-cover" style="background-image: url('{{ $user->profile_banner_path }}');" onclick="toggleModal()">
-                    <!-- <img src="{{ $user->profile_banner_path }}" onclick="toggleModal()"> -->
-                </div>
+                <div class="profile-cover" style="background-image: url('{{ $user->profile_banner_path }}');" onclick="toggleModal()"></div>
                 <div class="profile-info">
                     <div class="profile-picture">
                         <img src="{{ $user->profile_picture_path }}" onclick="toggleModal()" alt="{{ $user->username }}">
