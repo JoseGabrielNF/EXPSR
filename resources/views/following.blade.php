@@ -12,10 +12,10 @@
                 @foreach($accounts as $account)
                     <a class="user" href="{{ Auth::check() && Auth::user()->id == $account->id ? route('account.index') : route('account.show', $account->username) }}">
                         <div class="user-content">
-                            <div class="cover" style="background-image: url('/img/background.jpg')"></div>
+                            <div class="cover" style="background-image: url('{{ $account->profile_banner_path }}')"></div>
                             <div class="info">
                                 <div class="profile-picture">
-                                    <img src="http://www.venmond.com/demo/vendroid/img/avatar/big.jpg" alt="{{ $account->name }}">
+                                    <img src="{{ $account->profile_picture_path }}" alt="{{ $account->name }}">
                                 </div>
                                 <h3 class="user-name">{{ $account->name }}</h3>
                             </div>
