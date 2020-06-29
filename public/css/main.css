@@ -768,13 +768,17 @@ body .content .form-container .close-modal {
     padding-top: calc(50% - 5px);
   }
 
+  body .content .profile-info {
+    flex-direction: column;
+    justify-content: center;
+  }
+
   body .content .profile-info .profile-picture {
     left: calc(50% - 110px);
   }
 
-  body .content .profile-info {
-    flex-direction: column;
-    justify-content: center;
+  body .content .profile-info .profile-picture div button {
+    display: block;
   }
 
   body .content .profile-info .info {

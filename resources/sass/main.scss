@@ -779,24 +779,28 @@ body {
         padding-top: calc(50% - 5px);
     }
 
-    body .content .profile-info .profile-picture {
-        left: calc(50% - 110px);
-    }
-
     body .content .profile-info {
         flex-direction: column;
         justify-content: center;
-    }
 
-    body .content .profile-info .info {
-        width: 100%;
-        margin-top: 100px;
-        margin-left: 0;
-        align-items: center;
-    }
+        .profile-picture {
+            left: calc(50% - 110px);
 
-    body .content .profile-info button {
-        margin-left: 0;
+            div button {
+                display: block;
+            }
+        }
+
+        .info {
+            width: 100%;
+            margin-top: 100px;
+            margin-left: 0;
+            align-items: center;
+        }
+        
+        button {
+            margin-left: 0;
+        }
     }
 }
 

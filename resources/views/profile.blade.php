@@ -44,7 +44,7 @@
                             <input name="acao" value="deseguir"> 
                             <input name="usuario" value="{{ $user->username }}"> 
                         </form>
-                        <button type="submit" form="remove" class="align-right"><i class="fas fa-user-times"></i> Deixar de seguir</button>
+                        <button type="submit" form="remove" class="follow align-right"><i class="fas fa-user-times"></i> Deixar de seguir</button>
                         @endif
                     @endif
 
