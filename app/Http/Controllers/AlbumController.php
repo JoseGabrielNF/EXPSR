@@ -104,8 +104,8 @@ class AlbumController extends Controller
         $image->image_path = '/images/'.$imageName;
         $image->description = "".request('description');
 
+        //$image->salvar($id_user, $request->input('album_id'), '/images/'.$imageName, "".request('description'));
         $image->save();
-
         return back();
     }  
 
