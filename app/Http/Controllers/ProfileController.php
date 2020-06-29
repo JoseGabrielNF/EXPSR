@@ -121,9 +121,33 @@ class ProfileController extends Controller
         return back();
     }
 
-    public function edit_name(){return back();}
+    public function edit_name(Request $request){
+        $rules = [
+            'name' => ['required', 'max:2048']
+        ];
+
+        $messages = [
+            'required' => 'Esse campo é obrigatório!',
+            'name.max' => 'Nome muito grande!'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        $id_user = Auth::user()->id;
+        User::where('id', $id_user)->update(['name' => $request->name]);
+
+        return back();
+    }
+    
     public function edit_username(){return back();}
+    
     public function edit_email(){return back();}
+    
     public function edit_password(){return back();}
-    public function delete_profile(){return back();}
+    
+    public function delete_profile(){
+        $id_user = Auth::user()->id;
+        User::where('id', $id_user)->delete();
+        return redirect('/');
+    }
 }
