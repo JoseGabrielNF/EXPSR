@@ -3,10 +3,23 @@
 @section('content')
         <div class="content">
             <div class="container">
-                <div class="profile-cover" style="background-image: url('{{ $user->profile_banner_path }}');" onclick="toggleModal()"></div>
+                <div class="profile-cover" style="background-image: url('{{ $user->profile_banner_path }}');">
+                @if($personal)
+
+                    <button onclick="toggleModal()"><i class="fas fa-camera"></i></button>
+                @endif
+
+                </div>
                 <div class="profile-info">
                     <div class="profile-picture">
-                        <img src="{{ $user->profile_picture_path }}" onclick="toggleModal()" alt="{{ $user->username }}">
+                        <div>
+                            <img src="{{ $user->profile_picture_path }}" alt="{{ $user->username }}">
+                            @if($personal)
+
+                            <button onclick="toggleModal()"><i class="fas fa-camera"></i></button>
+                            @endif
+
+                        </div>
                     </div>
                     <div class="info">
                         <h1 class="user-name">{{ $user->name }}</h1>
@@ -22,7 +35,7 @@
                             <input name="acao" value="seguir"> 
                             <input name="usuario" value="{{ $user->username }}"> 
                         </form>
-                        <button type="submit" form="add" class="align-right"><i class="fas fa-user-plus"></i> Seguir</button>
+                        <button type="submit" form="add" class="follow align-right"><i class="fas fa-user-plus"></i> Seguir</button>
                         @endif
                         @if($follower)
 
