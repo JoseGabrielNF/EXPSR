@@ -121,4 +121,9 @@ class ProfileController extends Controller
         return back();
     }
 
+    public function edit_name(){}
+    public function edit_username(){}
+    public function edit_email(){}
+    public function edit_password(){}
+    public function delete(){}
 }
