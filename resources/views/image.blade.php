@@ -9,13 +9,14 @@
                 <div class="image-info">
                     <div class="info-header"> 
                         <div class="views">{{ $likes }} curtidas</div>
-                        @if (Auth::user()->username == $image->username)
+                        @if (Auth::check() && Auth::user()->username == $image->username)
                         <form method="POST" id="delete" style="display: none;" action="/delete_image">
                             @csrf
                             <input name="image_id" value="{{ $image->id }}">
                         </form>
                         <button type="submit" form="delete" ><i class="far fa-trash-alt"></i> Apagar imagem</button>
                         @endif
+                        @if(Auth::check())
                         <form method="POST" id="curtida" style="display: none;" action="/like">
                             @csrf
                             @if ($curtiu == 'Descurtir') 
@@ -27,13 +28,14 @@
                             <input name="id_image" value="{{ $image->id }}">
                         </form>
                         <button type="submit" form="curtida"><i class="far fa-heart"></i> {{ $curtiu }}</button>
+                        @endif
 
                     </div>
                     <div class="user">
                         <div class="profile-picture">                            
                             <img src="{{ $by_user->profile_picture_path }}" alt="">
                         </div>
-                        @if (Auth::user()->username == $image->username)
+                        @if (Auth::check() && Auth::user()->username == $image->username)
                         <a href="/my-account"><div class="username">{{$image->username}}</div></a>
                         @else
                         <a href="/account/{{ $image->username }}"><div class="username">{{$image->username}}</div></a>
