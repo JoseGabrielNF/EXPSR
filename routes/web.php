@@ -45,3 +45,8 @@ Route::post('/add-image', 'AlbumController@add_image')->middleware('auth');
 Route::post('/like', 'ImageController@curtida')->middleware('auth'); 
 Route::post('/delete_image', 'ImageController@delete');
 Route::post('/delete_album', 'AlbumController@delete');
+Route::post('/my-account/edit-name', 'ProfileController@edit_name')->middleware('auth'); 
+Route::post('/my-account/edit-username', 'ProfileController@edit_username')->middleware('auth'); 
+Route::post('/my-account/edit-email', 'ProfileController@edit_email')->middleware('auth'); 
+Route::post('/my-account/edit-password', 'ProfileController@edit_password')->middleware('auth'); 
+Route::post('/my-account/delete-profile', 'ProfileController@delete_profile')->middleware('auth'); 

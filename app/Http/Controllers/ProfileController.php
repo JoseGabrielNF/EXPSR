@@ -126,23 +126,34 @@ class ProfileController extends Controller
         return back();
     }
 
+<<<<<<< HEAD
     public function edit_name(){}
     
     public function edit_username(Request $request) {
 
         $rules = [
             'username' => ['required', 'string', 'min:3', 'max:16', 'unique:users']
+=======
+    public function edit_name(Request $request){
+        $rules = [
+            'name' => ['required', 'max:2048']
+>>>>>>> 758d0fae815cdf3bf2d659ced7d9775bc11853f0
         ];
 
         $messages = [
             'required' => 'Esse campo é obrigatório!',
+<<<<<<< HEAD
             'min' => 'Nome muito curto!',
             'max' => 'Nome muito grande!',
             'unique' => 'Nome de usuário em uso!'
+=======
+            'name.max' => 'Nome muito grande!'
+>>>>>>> 758d0fae815cdf3bf2d659ced7d9775bc11853f0
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
+<<<<<<< HEAD
         if ($validator->fails()) {
             return redirect()->route('account.settings')->withErrors($validator)->withInput();
         }
@@ -157,4 +168,23 @@ class ProfileController extends Controller
     public function edit_email(){}
     public function edit_password(){}
     public function delete(){}
+=======
+        $id_user = Auth::user()->id;
+        User::where('id', $id_user)->update(['name' => $request->name]);
+
+        return back();
+    }
+    
+    public function edit_username(){return back();}
+    
+    public function edit_email(){return back();}
+    
+    public function edit_password(){return back();}
+    
+    public function delete_profile(){
+        $id_user = Auth::user()->id;
+        User::where('id', $id_user)->delete();
+        return redirect('/');
+    }
+>>>>>>> 758d0fae815cdf3bf2d659ced7d9775bc11853f0
 }

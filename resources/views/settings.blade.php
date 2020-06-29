@@ -8,7 +8,7 @@
                 </div>
 
                 <h3 class="setting-title">Alterar nome</h3>
-                <form class="settings-form" action="" method="post">
+                <form class="settings-form" action="edit-name" method="post">
                 @csrf
 
                     <input type="text" id="name" name="name" value="{{ $user->name }}">
@@ -20,7 +20,7 @@
                 </form>
 
                 <h3 class="setting-title">Alterar nome de usuário</h3>
-                <form class="settings-form" action="" method="post">
+                <form class="settings-form" action="edit-username" method="post">
                 @csrf
 
                     <input type="text" id="username" name="username" value="{{ $user->username }}">
@@ -32,7 +32,7 @@
                 </form>
 
                 <h3 class="setting-title">Alterar endereço de email</h3>
-                <form class="settings-form" action="" method="post">
+                <form class="settings-form" action="edit-email" method="post">
                 @csrf
 
                     <input type="text" id="email" name="email" value="{{ $user->email }}">
@@ -44,7 +44,7 @@
                 </form>
 
                 <h3 class="setting-title">Alterar senha</h3>
-                <form class="settings-form column" action="" method="post">
+                <form class="settings-form column" action="edit-password" method="post">
                 @csrf
 
                     <label for="current-password">Senha atual</label>
@@ -61,7 +61,7 @@
                 </form>
 
                 <h3 class="setting-title">Excluir minha conta</h3>
-                <form class="settings-form" action="" method="post">
+                <form class="settings-form" action="delete-profile" method="post">
                 @csrf
 
                     <button type="submit">Excluir</button>
