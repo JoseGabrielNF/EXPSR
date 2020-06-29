@@ -15,6 +15,22 @@
                             <input name="image_id" value="{{ $image->id }}">
                         </form>
                         <button type="submit" form="delete" ><i class="far fa-trash-alt"></i> Apagar imagem</button>
+                        
+                        <form method="POST" id="voltar" style="display: none;" action="/volta_foto">
+                            @csrf
+                            <input name="image_id" value="{{ $image->id }}">
+                            <input name="image" value="{{ $image }}">
+                        </form>
+                        <button type="submit" form="voltar" ><i class="button"></i> voltar</button>
+                        
+                        <form method="POST" id="passar" style="display: none;" action="/passa_foto">
+                            @csrf
+                            <input name="image_id" value="{{ $image->id }}">
+                            <input name="image" value="{{ $image }}">
+                        </form>
+                        
+                        <button type="submit" form="passar" ><i class="button"></i> passar</button>
+                        
                         @endif
                         @if(Auth::check())
                         <form method="POST" id="curtida" style="display: none;" action="/like">

@@ -75,4 +75,48 @@ class ImageController extends Controller
         
         return redirect('/album/'.$image->album_id);
     } 
+    public function passar()
+    {
+       
+        $id = request('image_id');
+        $album = Image::select('album_id')->where('id', $id)->first();
+        $image = Image::all();
+        $images=$image;
+
+        $i=0;
+        $indice=$id;
+        for ($i=0;$i<count($images);$i++) 
+        {  
+            if($images[$i]->id==$id)
+            {
+                if($i+1<count($images)){
+                $indice=$images[$i+1]->id;
+                break;
+               }
+            }   
+        }
+         return redirect('/image/'.$indice);
+
+    }
+    public function voltar()
+    {
+       
+        $id = request('image_id');
+        $album = Image::select('album_id')->where('id', $id)->first();
+        $image = Image::all();
+        $images=$image;
+
+        $i=0;
+        $indice=$id;
+        for ($i=count($images)-1;$i>0;$i--) 
+        {  
+            if($images[$i]->id==$id)
+            {
+                $indice=$images[$i-1]->id;
+                break;
+            }   
+        }
+         return redirect('/image/'.$indice);
+
+    }
 }

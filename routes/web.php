@@ -49,3 +49,5 @@ Route::post('/delete_album', 'AlbumController@delete');
 Route::post('/my-account/edit-name', 'ProfileController@edit_name')->middleware('auth'); 
 Route::post('/my-account/edit-username', 'ProfileController@edit_username')->middleware('auth'); 
 Route::post('/my-account/delete-profile', 'ProfileController@delete_profile')->middleware('auth'); 
+Route::post('/passa_foto', 'ImageController@passar')->middleware('auth'); 
+Route::post('/volta_foto', 'ImageController@voltar')->middleware('auth'); 
