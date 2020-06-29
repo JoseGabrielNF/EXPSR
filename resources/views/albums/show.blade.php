@@ -15,7 +15,9 @@
                         @csrf
                         <input name="album_id" value="{{ $album->id }}">
                     </form>
+                    @if(count($images) == 0)
                     <button type="submit" form="delete" class="st"><i class="far fa-trash-alt"></i></button>
+                    @endif
                     <button onclick="toggleModal()"><i class="far fa-image"></i> Adicionar</button>
                     @endif
                 </div>
