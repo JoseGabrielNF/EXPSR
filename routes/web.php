@@ -17,11 +17,6 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::get('/my-account/settings', function () {
-    $user = Auth::user();
-    return view('settings', ['user' => $user]);
-})->middleware('auth');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home'); 
@@ -32,6 +27,8 @@ Route::get('/image/{id}', 'ImageController@show');
 
 Route::get('/my-account', 'ProfileController@index')->name('account.index')->middleware('auth');
 Route::get('/account/{username}', 'ProfileController@show')->name('account.show');
+
+Route::get('/my-account/settings', 'ProfileController@settings')->name('account.settings')->middleware('auth');
 
 Route::get('/albums', 'AlbumController@index')->middleware('auth'); 
 Route::get('/account/{username}/albums', 'ProfileController@list_albums');

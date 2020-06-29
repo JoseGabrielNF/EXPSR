@@ -46,6 +46,11 @@ class ProfileController extends Controller
         return view('profile', ['user' => $user, 'albums' => $albums, 'personal' => false, 'seguidores' => $seguidores, 'seguindo' => $seguindo, 'follower' => $follower]);
     }
 
+    public function settings() {
+        $user = Auth::user();
+        return view('settings', ['user' => $user]);
+    }
+
     public function album_perfil($username, $album_id) {
         $album = Album::where('id', $album_id)->firstOrFail();
         $images = Image::where('album_id', $album->id)->get();
@@ -122,7 +127,33 @@ class ProfileController extends Controller
     }
 
     public function edit_name(){}
-    public function edit_username(){}
+    
+    public function edit_username(Request $request) {
+
+        $rules = [
+            'username' => ['required', 'string', 'min:3', 'max:16', 'unique:users']
+        ];
+
+        $messages = [
+            'required' => 'Esse campo é obrigatório!',
+            'min' => 'Nome muito curto!',
+            'max' => 'Nome muito grande!',
+            'unique' => 'Nome de usuário em uso!'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->route('account.settings')->withErrors($validator)->withInput();
+        }
+
+        $user = Auth::user();
+
+        User::where('id', $user->id)->update(['username' => $request->input('username')]);
+
+        return back();
+    }
+
     public function edit_email(){}
     public function edit_password(){}
     public function delete(){}
