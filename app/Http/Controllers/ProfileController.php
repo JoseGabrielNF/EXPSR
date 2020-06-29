@@ -86,6 +86,11 @@ class ProfileController extends Controller
 
         return redirect('/account/' . $username);
     }
+
+    public function settings(){
+        $user = Auth::user();
+        return view('settings', ['user' => $user]);
+    }
     
     public function edit_profile_images(Request $request){
         $rules = [
