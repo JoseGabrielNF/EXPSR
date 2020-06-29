@@ -11,7 +11,7 @@ use Auth;
 class ImageController extends Controller
 {
     public function show($id) {
-        $image = Image::select('users.name', 'users.username', 'images.id', 'images.image_path', 'images.description')
+        /*$image = Image::select('users.name', 'users.username', 'images.id', 'images.image_path', 'images.description')
                     ->join('albums', 'albums.id', '=', 'images.album_id')
                     ->join('users', 'users.id', '=', 'albums.user_id')
                     ->where('images.id', $id)->firstOrFail();
@@ -28,7 +28,14 @@ class ImageController extends Controller
             $curtiu = 'Descurtir';
         }
 
-        return view('image', ['by_user' => $by_user, 'image' => $image, 'curtiu' => $curtiu, 'likes' => $likes]); 
+        return view('image', ['by_user' => $by_user, 'image' => $image, 'curtiu' => $curtiu, 'likes' => $likes]);*/
+
+        $image = new Image;
+        
+        $parametros = $image->prepare($id, Auth::user()->id);
+  
+        return view('image', ['by_user' => $parametros['by_user'], 'image' => $parametros['image'], 'curtiu' => $parametros['curtiu'], 'likes' => $parametros['likes']]);
+
     }
 
     public function curtida () {
@@ -36,7 +43,15 @@ class ImageController extends Controller
         $acao = request('acao');
         $imagem = request('id_image');
 
-        $user = User::select('id')->where('username', $username)->firstOrFail();
+        if ($acao == 'curtir') {
+            Image::like($username, $imagem);
+        }
+
+        if ($acao == 'descurtir') {
+            Image::dislike($username, $imagem);
+        }
+
+        /*$user = User::select('id')->where('username', $username)->firstOrFail();
 
         $likes = new Likes;
 
@@ -49,8 +64,15 @@ class ImageController extends Controller
 
         if ($acao == 'descurtir') {
             Likes::where('image_id', $imagem)->where('user_id', $user->id)->delete();
-        }
+        }*/
 
         return redirect('/image/' .$imagem);        
     }
+
+    public function delete() {
+        $id = request('image_id');
+        $image = Image::deletar($id);
+        
+        return redirect('/album/'.$image->album_id);
+    } 
 }

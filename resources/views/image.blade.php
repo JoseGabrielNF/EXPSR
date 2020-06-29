@@ -8,9 +8,12 @@
                 </div>
                 <div class="image-info">
                     <div class="info-header">
-                        <div class="likes">{{ $likes }} curtidas</div>
-                        
-                        <button><i class="far fa-trash-alt"></i> Apagar imagem</button>
+                        <div class="views">{{ $likes }} curtidas</div>
+                        <form method="POST" id="delete" style="display: none;" action="/delete_image">
+                            @csrf
+                            <input name="image_id" value="{{ $image->id }}">
+                        </form>
+                        <button type="submit" form="delete" ><i class="far fa-trash-alt"></i> Apagar imagem</button>
                         <form method="POST" id="curtida" style="display: none;" action="/like">
                             @csrf
                             @if ($curtiu == 'Descurtir') 
@@ -18,7 +21,7 @@
                             @else
                             <input name="acao" value="curtir">
                             @endif
-                            <input name="usuario" value="{{ Auth::user()->username }}"> 
+                            <input name="usuario" value="{{ Auth::user()->username }}">  
                             <input name="id_image" value="{{ $image->id }}">
                         </form>
                         <button type="submit" form="curtida"><i class="far fa-heart"></i> {{ $curtiu }}</button>

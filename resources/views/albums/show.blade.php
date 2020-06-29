@@ -11,7 +11,11 @@
                         <span class="visibility private">Privado</span>
                     @endif
                     @if($personal)
-                    <button class="st"><i class="far fa-trash-alt"></i></button>
+                    <form method="POST" id="delete" style="display: none;" action="/delete_album">
+                        @csrf
+                        <input name="album_id" value="{{ $album->id }}">
+                    </form>
+                    <button type="submit" form="delete" class="st"><i class="far fa-trash-alt"></i></button>
                     <button onclick="toggleModal()"><i class="far fa-image"></i> Adicionar</button>
                     @endif
                 </div>

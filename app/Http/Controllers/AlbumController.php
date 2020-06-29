@@ -104,8 +104,21 @@ class AlbumController extends Controller
         $image->image_path = '/images/'.$imageName;
         $image->description = "".request('description');
 
+        //$image->salvar($id_user, $request->input('album_id'), '/images/'.$imageName, "".request('description'));
         $image->save();
-
         return back();
     }  
+
+    public function delete() {
+
+        $id = request('album_id');
+        $image = Image::where('album_id', $id)->first();
+        if ($image == ''){
+            Album::where('id', $id)->delete();
+        }else {
+            echo "<script type='javascript'>alert('Há fotos no álbum!');";
+            return back();
+        }
+        return redirect('/albums');
+    }
 }
