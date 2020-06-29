@@ -31,35 +31,6 @@
                     @enderror
                 </form>
 
-                <h3 class="setting-title">Alterar endereço de email</h3>
-                <form class="settings-form" action="edit-email" method="post">
-                @csrf
-
-                    <input type="text" id="email" name="email" value="{{ $user->email }}">
-                    <button type="submit">Alterar</button>
-
-                    @error('email')
-                    <span class="error">{{ $message }}</span>
-                    @enderror
-                </form>
-
-                <h3 class="setting-title">Alterar senha</h3>
-                <form class="settings-form column" action="edit-password" method="post">
-                @csrf
-
-                    <label for="current-password">Senha atual</label>
-                    <input type="password" id="current-password" name="current-password">
-                    <label for="new-password">Nova senha</label>
-                    <input type="password" id="new-password" name="new-password">
-                    <label for="new-password">Confirmar nova senha</label>
-                    <input type="password" id="new-password-confirm" name="new-password_confirmation">
-                    <button type="submit">Alterar</button>
-
-                    @error('password')
-                    <span class="error">{{ $message }}</span>
-                    @enderror
-                </form>
-
                 <h3 class="setting-title">Excluir minha conta</h3>
                 <form class="settings-form" action="delete-profile" method="post">
                 @csrf
