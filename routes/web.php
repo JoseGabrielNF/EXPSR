@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home'); 
 Route::get('/explorer', 'ExplorerController@index')->name('explorer')->middleware('auth');
 Route::get('/account/{username}/album/{id}', 'ProfileController@album_perfil')->middleware('auth');
+Route::get('/my-account/settings', 'ProfileController@settings')->middleware('auth');
 Route::get('/album/{id}', 'AlbumController@show');
 Route::get('/image/{id}', 'ImageController@show');
 
