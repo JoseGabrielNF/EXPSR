@@ -63,13 +63,13 @@ class Image extends Model
         return $parametros;
     }
 
-    public static function salvar($user_id, $album_id, $image_path, $description) {
+    /*public static function salvar($user_id, $album_id, $image_path, $description) {
         $this->user_id = $user_id;
         $this->album_id = $album_id;
         $this->image_path = $image_path;
         $this->description = $description;
         $this->save();
-    }
+    }*/
 
     public static function deletar($id) {
         $album = Image::select('album_id')->where('id', $id)->first();

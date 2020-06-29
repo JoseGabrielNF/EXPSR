@@ -7,13 +7,15 @@
                     <img src="{{ $image->image_path }}" alt="Visualizar imagem">
                 </div>
                 <div class="image-info">
-                    <div class="info-header">
+                    <div class="info-header"> 
                         <div class="views">{{ $likes }} curtidas</div>
+                        @if (Auth::user()->username == $image->username)
                         <form method="POST" id="delete" style="display: none;" action="/delete_image">
                             @csrf
                             <input name="image_id" value="{{ $image->id }}">
                         </form>
                         <button type="submit" form="delete" ><i class="far fa-trash-alt"></i> Apagar imagem</button>
+                        @endif
                         <form method="POST" id="curtida" style="display: none;" action="/like">
                             @csrf
                             @if ($curtiu == 'Descurtir') 

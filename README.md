@@ -10,9 +10,8 @@ EXPSR é uma plataforma de armazenamento e compartilhamento de imagens com objet
 
 Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 <!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
-* Você deve possuir a última versão do `PHP, MySQL, XAMPP e Composer` instalados.
+* Você deve possuir a última versão do `Git, PHP, MySQL, XAMPP e Composer` instalados.
 * Você pode possuir uma máquina `Windows ou Linux`.
-* Você deve ter instalado `Git ,PHP, MySQL e Composer`.
 
 ## Como executar
 * Execute os comandos pelo cmd
@@ -49,6 +48,10 @@ Para usar EXPSR, siga os seguintes passos (exemplos):
 * Ao acessar um perfil:
     * É apresentado os álbuns, seguidores e quem segue este perfil.
     * Acionar o botão para seguir o perfil.
+* Explorar imagens da rede:
+    * Nesta página é possível visualizar fotos de outros usuários.
+    * Somente fotos em álbuns públicos aparecem em Explorar.
+    * Aqui você descobre outros usuários para montar sua rede social de seguidores.
 
 ## Contribuidores
 
