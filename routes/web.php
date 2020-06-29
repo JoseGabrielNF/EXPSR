@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+Route::get('/my-account/settings', function () {
+    $user = Auth::user();
+    return view('settings', ['user' => $user]);
+})->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home'); 
