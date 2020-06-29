@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <title>@yield('title') - EXPSR</title>
+    <link rel="shortcut icon" href="photo-camera.ico" type="image/x-icon">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -28,7 +29,7 @@
         <div class="container">
             <div class="logo">EXPSR</div>
             <ul class="nav-list">
-                <li class="nav-item"><a href="#">Início</a></li>
+                <li class="nav-item"><a href="{{ route('account.index') }}">Início</a></li>
                 <li class="nav-item"><a href="{{ route('explorer') }}">Explorar</a></li>
 @guest
                 <li class="nav-item align-right"><a href="{{ route('login') }}">Entrar</a></li>
