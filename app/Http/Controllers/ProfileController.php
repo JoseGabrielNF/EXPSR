@@ -91,12 +91,7 @@ class ProfileController extends Controller
 
         return redirect('/account/' . $username);
     }
-
-    public function settings(){
-        $user = Auth::user();
-        return view('settings', ['user' => $user]);
-    }
-    
+   
     public function edit_profile_images(Request $request){
         $rules = [
             'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
@@ -156,7 +151,7 @@ class ProfileController extends Controller
             'required' => 'Esse campo é obrigatório!',
             'min' => 'Nome muito curto!',
             'max' => 'Nome muito grande!',
-            'unique' => 'Nome de usuário em uso!'
+            'unique' => 'Nome de usuário em uso!',
             'name.max' => 'Nome muito grande!'
         ];
 
