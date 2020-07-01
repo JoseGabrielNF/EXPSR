@@ -80,9 +80,9 @@ class ImageController extends Controller
        
         $id = request('image_id');
         $album = Image::select('album_id')->where('id', $id)->first();
-        $image = Image::all();
+        $image = Image::select('id')->where('album_id',$album->album_id)->get();
         $images=$image;
-
+    
         $i=0;
         $indice=$id;
         for ($i=0;$i<count($images);$i++) 
@@ -103,14 +103,16 @@ class ImageController extends Controller
        
         $id = request('image_id');
         $album = Image::select('album_id')->where('id', $id)->first();
-        $image = Image::all();
+        $image = Image::select('id')->where('album_id',$album->album_id)->get();
         $images=$image;
-
+      
+       
         $i=0;
         $indice=$id;
         for ($i=count($images)-1;$i>0;$i--) 
         {  
-            if($images[$i]->id==$id)
+        
+            if($images[$i]->id==$id )
             {
                 $indice=$images[$i-1]->id;
                 break;
