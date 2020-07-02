@@ -13,10 +13,11 @@ class ExplorerController extends Controller
     public function index() {
 
         $user = Auth::user();
-        $images = Image::select('images.image_path','albums.public','images.id')
+        $images = Image::select('images.image_path','albums.public','images.id','users.id')
         ->join('albums', 'albums.id', 'images.album_id')
-        ->where('albums.public',1)->where('album_id','!=', $user->id)->get();
-
+        ->join('users', 'users.id', 'albums.user_id')
+        ->where('albums.public',1)->where('albums.user_id','!=',$user->id )->get();
+    
         return view('explorer', ['images'=>$images]);
     }
    
